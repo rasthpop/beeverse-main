@@ -28,7 +28,7 @@ export default function MenuDrawer(
 		quests?: Tables<'quests'>[]
 	}
 ) {
-	//UI decoration consts
+	//Front
 	
 
 	// Telegram SDK
@@ -251,7 +251,9 @@ export default function MenuDrawer(
 						<Image src={'/icons/chest.png'} alt="Logo" width={128} height={128} className="w-16 h-16 object-contain" draggable={false} priority/>
 						</div>
 						<div className='flex text-[16px]'>
-							<div className='bg-backdrop w-[154px] h-[154px] flex-shrink-0 mr-[13px] rounded-[20px]'></div>
+							<div className='bg-backdrop w-[154px] h-[154px] flex-shrink-0 mr-[13px] rounded-[20px]'>
+								<img src='/icons/honeybee.png' />
+							</div>
 							<div>
 								<span>Every 4 hours, your worker bees will bring you more honey! Specifically, 0.5% of your balance.</span>
 								<p className=''>Your passive income now:  </p>
@@ -262,9 +264,9 @@ export default function MenuDrawer(
 
 						<Button
 						// claim treasure
-						className=' h-14 w-[58%] mt-auto mb-4 text-[20px] rounded-[64px]'
+						className=' h-12 w-[50%] mt-auto mb-4 text-[20px] rounded-[64px] border-2'
 						>
-							Claim 1,500 <img src='/icons/honey.png' className='ml-[2px]' />
+							Get 1,500 <img src='/icons/honey.png' className='ml-[2px]' />
 						</Button>	
 					</div>
 				)
