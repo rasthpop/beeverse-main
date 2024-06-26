@@ -20,7 +20,7 @@ export default function HoneyDisplay(
 			{(props.amount).toLocaleString('en')}
 		</h1>
 		<Image
-		src={"/icons/coin.png"}
+		src={"/icons/honey.png"}
 		alt="Logo"
 		width={props.iconSize}
 		height={props.iconSize}

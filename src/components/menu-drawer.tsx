@@ -98,7 +98,7 @@ export default function MenuDrawer(
 							</div>
 						)
 					}
-					<h1 className='w-full text-2xl font-medium text-center whitespace-nowrap absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2'>
+					<h1 className={`w-full text-2xl font-medium text-center whitespace-nowrap absolute left-1/2 -translate-x-1/2 ${props.section === "leaderboard" || props.section === "quests"? "top-[69%]" : "top-1/2" }  -translate-y-1/2`}>
 						{props.section === "ranks" && "Alpha Ranks Rewards:"}
 						{props.section === "friends" && `Referrals`}
 						{props.section === "bonus" && "Treasure"}
@@ -119,7 +119,7 @@ export default function MenuDrawer(
 				</div>
 				{
 					(props.section === "leaderboard" && props.leaders) && (
-						<div className='w-full min-h-[212px] max-h-[412px] rounded-3xl bg-backdrop mt-4 overflow-auto '>
+						<div className='w-full min-h-[212px] max-h-[412px] rounded-3xl bg-backdrop mt-4 overflow-auto mb-12 '>
 							<Table className='flex justify-center  '>
 								{/* <TableHeader>
 									<TableRow>
@@ -127,11 +127,11 @@ export default function MenuDrawer(
 										<TableHead className="max-w-full text-center text-normal-stroke">Honey</TableHead>
 									</TableRow>
 								</TableHeader> */}
-								<TableBody className='w-[80%]' >
+								<TableBody className='w-[80%] mt-[14px] ' >
 									{props.leaders.map((leader, idx) => (
 										
 
-										<TableRow key={idx} className='mb-[7px] flex items-center text-[16px]  '>
+										<TableRow key={idx} className='mb-[7px] flex items-center text-[16px] '>
 											<div className={`text-[20px] ${idx === 0? "text-[gold]" : idx === 1? "text-[#cecdcd]" : idx == 2? "text-[#ffa041]" : "text-[white]"} `}>
 												{idx + 1}
 											</div>
@@ -148,7 +148,13 @@ export default function MenuDrawer(
 				}
 				{
 					(props.section === "friends" && props.friends) && (
+						
 						<div className='w-full h-full max-h-full flex flex-col mt-4 overflow-auto'>
+							
+						<div className='w-full inline-flex items-center justify-center absolute top-0 left-1/2 -translate-x-1/2 -mt-9'>
+						<Image src={'/icons/email.png'} alt="Logo" width={128} height={128} className="w-16 h-16 object-contain" draggable={false} priority/>
+						</div>
+
 							<div className='w-full flex flex-col gap-2'>
 								<ReferralRewardCard avatarURL={'/icons/referral.png'} title={'Invite your friend!'} amount={5000} />
 								<ReferralRewardCard avatarURL={'/icons/referral-premium.png'} title={'Invite your premium friend!'} amount={25000} />
@@ -246,6 +252,7 @@ export default function MenuDrawer(
 				{
 					props.section === "bonus" && (
 						<div className='w-full h-[332px] max-h-full items-center flex flex-col mt-4 overflow-auto'>
+							
 
 						<div className='w-full inline-flex items-center justify-center absolute top-0 left-1/2 -translate-x-1/2 -mt-9'>
 						<Image src={'/icons/chest.png'} alt="Logo" width={128} height={128} className="w-16 h-16 object-contain" draggable={false} priority/>
@@ -273,7 +280,10 @@ export default function MenuDrawer(
 				}
 				{
 					(props.section === "quests" && props.quests) && (
-						<div className='w-full h-full max-h-full flex flex-col mt-4 overflow-auto'>
+						<div className='w-full h-full max-h-full flex flex-col mt-4 overflow-auto'>	
+							<div className='w-full inline-flex items-center justify-center absolute top-0 left-1/2 -translate-x-1/2 -mt-9'>
+								<Image src={'/icons/notification.png'} alt="Logo" width={128} height={128} className="w-16 h-16 object-contain" draggable={false} priority/>
+							</div>
 							<div className='w-full flex flex-col'>
 								<QuestCard
 								reward={5000}
