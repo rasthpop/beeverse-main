@@ -29,6 +29,9 @@ const config = {
     //   '5xl': '3.052rem',
     // },
     extend: {
+      backgroundImage:{
+        'R1': "url('icons/level/R1.png')"
+      },
       colors: {
         background: "#1C1F24",
         foreground: "#EDEDED",

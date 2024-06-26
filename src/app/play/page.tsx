@@ -129,8 +129,8 @@ export default function Page() {
 							quests={quests}
 							/>
 							<MenuButton
-							title={"Bonus"}
-							iconURL={"/icons/diamond.png"}
+							title={"Treasure"}
+							iconURL={"/icons/chest.png"}
 							size={"sm"}
 							isLocked={false}
 							section="bonus"

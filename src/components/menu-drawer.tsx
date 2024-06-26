@@ -12,6 +12,7 @@ import QuestCard from './quest-card';
 import { usePopup } from '@tma.js/sdk-react';
 import { Tables } from '../../types/supabase';
 import HoneyDisplay from './honey-display';
+import { Key } from 'lucide-react';
 
 export default function MenuDrawer(
 	props: {
@@ -27,6 +28,9 @@ export default function MenuDrawer(
 		quests?: Tables<'quests'>[]
 	}
 ) {
+	//UI decoration consts
+	
+
 	// Telegram SDK
 	const tPopup = usePopup(true);
 
@@ -97,7 +101,7 @@ export default function MenuDrawer(
 					<h1 className='w-full text-2xl font-medium text-center whitespace-nowrap absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2'>
 						{props.section === "ranks" && "Alpha Ranks Rewards:"}
 						{props.section === "friends" && `Referrals`}
-						{props.section === "bonus" && "Bonus for you!"}
+						{props.section === "bonus" && "Treasure"}
 						{props.section === "quests" && "Quests:"}
 						{props.section === "leaderboard" && "Leaderboard:"}
 					</h1>
@@ -115,20 +119,26 @@ export default function MenuDrawer(
 				</div>
 				{
 					(props.section === "leaderboard" && props.leaders) && (
-						<div className='w-full min-h-[212px] max-h-[412px] rounded-3xl bg-backdrop mt-4 overflow-auto'>
-							<Table>
+						<div className='w-full min-h-[212px] max-h-[412px] rounded-3xl bg-backdrop mt-4 overflow-auto '>
+							<Table className='flex justify-center  '>
 								{/* <TableHeader>
 									<TableRow>
 										<TableHead className="max-w-full text-center text-normal-stroke">Name</TableHead>
 										<TableHead className="max-w-full text-center text-normal-stroke">Honey</TableHead>
 									</TableRow>
 								</TableHeader> */}
-								<TableBody>
+								<TableBody className='w-[80%]' >
 									{props.leaders.map((leader, idx) => (
-										<TableRow key={idx}>
-											<TableCell className="max-w-full text-center truncate text-normal-stroke">{leader.username || "unidentified"}</TableCell>
-											<TableCell className="max-w-full text-center text-normal-stroke">{(leader.balance).toLocaleString('en')}</TableCell>
+										
+
+										<TableRow key={idx} className='mb-[7px] flex items-center text-[16px]  '>
+											<div className={`text-[20px] ${idx === 0? "text-[gold]" : idx === 1? "text-[#cecdcd]" : idx == 2? "text-[#ffa041]" : "text-[white]"} `}>
+												{idx + 1}
+											</div>
+											<TableCell className={`max-w-full text-center mr-auto truncate text-normal-stroke ${idx < 3 && ' text-[20px]'} ${idx === 0? "text-[gold]" : idx === 1? "text-[#cecdcd]" : idx == 2? "text-[#ffa041]" : "text-[white]"} `}>{leader.username || "unidentified"}</TableCell>
+											<TableCell className="ml-[47px] max-w-full text-center text-normal-stroke">{(leader.balance).toLocaleString('en')}</TableCell>
 										</TableRow>
+							
 									))}
 								</TableBody>
 							</Table>
@@ -234,10 +244,22 @@ export default function MenuDrawer(
 				}
 				{
 					props.section === "bonus" && (
-						<div className='w-full h-[422px] max-h-full flex flex-col mt-4 overflow-auto'>
+						<div className='w-full h-[332px] max-h-full align-center flex flex-col mt-4 overflow-auto'>
 
+						<div className='w-full inline-flex items-center justify-center absolute top-0 left-1/2 -translate-x-1/2 -mt-9'>
+						<Image src={'/icons/chest.png'} alt="Logo" width={128} height={128} className="w-16 h-16 object-contain" draggable={false} priority/>
 						</div>
-					)
+						<div className='flex text-[17px]'>
+							<div className='bg-backdrop w-[137px] h-[137px] flex-shrink-0 mr-[13px] rounded-[20px]'></div>
+							<div>
+								<span>Every 4 hours, your worker bees will bring you more honey! Specifically, 0.5% of your balance.</span>
+								<p className=''>Your passive income now: <HoneyDisplay amount={100} iconSize={17} /> </p>
+							</div>
+						</div>
+
+							
+					</div>
+				)
 				}
 				{
 					(props.section === "quests" && props.quests) && (
