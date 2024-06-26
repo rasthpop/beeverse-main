@@ -34,12 +34,12 @@ export default function RankDrawer() {
 			</DrawerTrigger>
 			<DrawerContent>
 				<div className="w-full inline-flex items-center justify-end relative">
-					<h1 className='w-full text-2xl font-medium text-center whitespace-nowrap absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2'>Alpha Ranks Rewards:</h1>
+					<h1 className='w-full text-2xl font-medium text-center whitespace-nowrap absolute left-1/2 -translate-x-1/2 top-[70%] -translate-y-1/2'>Alpha Ranks Rewards:</h1>
 					<Button
 					variant={'ghost'}
 					size={'icon'}
 					onClick={() => setIsOpen(false)}
-					className="z-[99]"
+					className="z-[99] mt-8"
 					>
 						<svg width="24" height="24" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<rect x="14.8492" y="6.10352e-05" width="4" height="21" transform="rotate(45 14.8492 6.10352e-05)" fill="#D9D9D9"/>

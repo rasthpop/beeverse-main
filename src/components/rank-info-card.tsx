@@ -28,7 +28,7 @@ export default function RankInfoCard(
 			<div className='w-full flex flex-col items-start justify-center mb-4'>
 				{/* <HoneyDisplay amount={props.requiredAmount} iconSize={32} /> */}
 				<Progress value={0} content={`${props.currentbalance}/${props.requiredAmount}`} className="bg-[url(/interface/target-progress.png)] "/>
-				<p className='text-foreground text-base font-medium leading-5 ml-[10px]'>{props.description} + <span><HoneyDisplay amount={props.bonusAmount} iconSize={18} textClass='text-sm text-normal-stroke ' /></span></p>
+				<p className='text-foreground text-base font-medium leading-5 ml-[10px]'>Reward: {props.description} + <span><HoneyDisplay amount={props.bonusAmount} iconSize={18} textClass='text-sm text-normal-stroke font-not-bold' /></span></p>
 			</div>
 		</div>
 	)

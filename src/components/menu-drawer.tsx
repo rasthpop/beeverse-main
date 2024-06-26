@@ -38,7 +38,7 @@ export default function MenuDrawer(
 	const [isOpen, setIsOpen] = React.useState<boolean>(false);
 
 	return(
-		<Drawer open={isOpen} onClose={() => setIsOpen(false)}>
+		<Drawer open={isOpen} onClose={() => setIsOpen(false) }>
 			<DrawerTrigger
 			asChild
 			disabled={props.isLocked}
@@ -85,7 +85,7 @@ export default function MenuDrawer(
 				<div className="w-full inline-flex items-center justify-end relative">
 					{
 						props.section === 'leaderboard' && (
-							<div className='w-full inline-flex items-center justify-center absolute top-0 left-1/2 -translate-x-1/2 -mt-9'>
+							<div className='w-full inline-flex items-center justify-center absolute top-[43%] left-1/2 -translate-x-1/2 -mt-9'>
 								<Image
 								src={'/icons/star.png'}
 								alt="Logo"
@@ -98,7 +98,7 @@ export default function MenuDrawer(
 							</div>
 						)
 					}
-					<h1 className={`w-full text-2xl font-medium text-center whitespace-nowrap absolute left-1/2 -translate-x-1/2 ${props.section === "leaderboard" || props.section === "quests"? "top-[69%]" : "top-1/2" }  -translate-y-1/2`}>
+					<h1 className={`w-full text-2xl font-medium text-center whitespace-nowrap absolute left-1/2 -translate-x-1/2 ${props.section === "leaderboard" || props.section === "quests"? "top-[90%]" : "top-[80%]" }  -translate-y-1/2`}>
 						{props.section === "ranks" && "Alpha Ranks Rewards:"}
 						{props.section === "friends" && `Referrals`}
 						{props.section === "bonus" && "Treasure"}
@@ -109,7 +109,7 @@ export default function MenuDrawer(
 					variant={'ghost'}
 					size={'icon'}
 					onClick={() => setIsOpen(false)}
-					className='z-[99]'
+					className='z-[99] mt-8'
 					>
 						<svg width="24" height="24" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<rect x="14.8492" y="6.10352e-05" width="4" height="21" transform="rotate(45 14.8492 6.10352e-05)" fill="#D9D9D9"/>
@@ -119,7 +119,8 @@ export default function MenuDrawer(
 				</div>
 				{
 					(props.section === "leaderboard" && props.leaders) && (
-						<div className='w-full min-h-[212px] max-h-[412px] rounded-3xl bg-backdrop mt-4 overflow-auto '>
+					<div className='flex justify-center'>
+						<div className='w-[96%] min-h-[212px] max-h-[504px] rounded-3xl bg-backdrop mt-8 mb-12 overflow-auto '>
 							<Table className='flex justify-center  '>
 								{/* <TableHeader>
 									<TableRow>
@@ -127,7 +128,7 @@ export default function MenuDrawer(
 										<TableHead className="max-w-full text-center text-normal-stroke">Honey</TableHead>
 									</TableRow>
 								</TableHeader> */}
-								<TableBody className='w-[80%] mt-[14px] ' >
+								<TableBody className='w-[90%] mt-[14px] ' >
 									{props.leaders.map((leader, idx) => (
 										
 
@@ -144,6 +145,7 @@ export default function MenuDrawer(
 								</TableBody>
 							</Table>
 						</div>
+					</div>	
 					)
 				}
 				{
@@ -151,11 +153,11 @@ export default function MenuDrawer(
 						
 						<div className='w-full h-full max-h-full flex flex-col mt-4 overflow-auto'>
 							
-						<div className='w-full inline-flex items-center justify-center absolute top-0 left-1/2 -translate-x-1/2 -mt-9'>
+						<div className='w-full inline-flex items-center justify-center absolute top-[6%] left-1/2 -translate-x-1/2 -mt-9'>
 						<Image src={'/icons/email.png'} alt="Logo" width={128} height={128} className="w-16 h-16 object-contain" draggable={false} priority/>
 						</div>
 
-							<div className='w-full flex flex-col gap-2'>
+							<div className='w-[98%] flex flex-col gap-2 mt-6'>
 								<ReferralRewardCard avatarURL={'/icons/referral.png'} title={'Invite your friend!'} amount={5000} />
 								<ReferralRewardCard avatarURL={'/icons/referral-premium.png'} title={'Invite your premium friend!'} amount={25000} />
 							</div>
@@ -170,8 +172,8 @@ export default function MenuDrawer(
 									<HoneyDisplay amount={50000} iconSize={16} textClass='text-base' />
 								</Button>
 							</div>
-							<div className='w-full flex flex-col items-center justify-center mt-4'>
-								<div className='w-full inline-flex items-center justify-between'>
+							<div className='w-[98%] flex flex-col items-center justify-center mt-4'>
+								<div className='w-[98%] inline-flex items-center justify-between'>
 									<p className='text-base text-title-stroke font-medium text-foreground'>List of your friends: {props.friends?.length || 0}</p>
 									<Button
 									variant={'ghost'}
@@ -210,7 +212,7 @@ export default function MenuDrawer(
 									}
 								</div>
 							</div>
-							<div className="w-full inline-flex gap-2 items-center mt-4">
+							<div className="w-full inline-flex gap-2 justify-center items-center mt-4">
 								<TelegramShareButton url={`https://t.me/beeverse_main_dev_bot/start?startapp=frP-${props.user.id_tg}`} className="w-full">
 									<Button
 									variant={'default'}
@@ -254,18 +256,18 @@ export default function MenuDrawer(
 						<div className='w-full h-[332px] max-h-full items-center flex flex-col mt-4 overflow-auto'>
 							
 
-						<div className='w-full inline-flex items-center justify-center absolute top-0 left-1/2 -translate-x-1/2 -mt-9'>
+						<div className='w-full inline-flex items-center justify-center absolute top-[7%] left-1/2 -translate-x-1/2 -mt-9'>
 						<Image src={'/icons/chest.png'} alt="Logo" width={128} height={128} className="w-16 h-16 object-contain" draggable={false} priority/>
 						</div>
 						<div className='flex text-[16px]'>
-							<div className='bg-backdrop w-[154px] h-[154px] flex-shrink-0 mr-[13px] rounded-[20px]'>
-								<img src='/icons/honeybee.png' />
+							<div className='bg-backdrop w-[154px] h-[154px] flex items-center flex-shrink-0 mr-[13px] rounded-[20px]'>
+								<img src='/icons/tresurechest.png' />
 							</div>
 							<div>
 								<span>Every 4 hours, your worker bees will bring you more honey! Specifically, 0.5% of your balance.</span>
 								<p className=''>Your passive income now:  </p>
 													{/* 0.5% of balance  */}
-								<div className='flex text-[18px]'>	<p> 1,500</p> <img src='/icons/honey.png' className='ml-[2px]' />	</div>
+								<div className='flex text-[18px] items-center'>	<p> 1,500</p> <img src='/icons/honey.png'  className='ml-[2px] w-4 h-4' />	</div>
 							</div>
 						</div>
 
@@ -273,7 +275,7 @@ export default function MenuDrawer(
 						// claim treasure
 						className=' h-12 w-[50%] mt-auto mb-4 text-[20px] rounded-[64px] border-2'
 						>
-							Get 1,500 <img src='/icons/honey.png' className='ml-[2px]' />
+							Get 1,500 <img src='/icons/honey.png' className='ml-[2px] w-6 h-6' />
 						</Button>	
 					</div>
 				)
@@ -281,10 +283,10 @@ export default function MenuDrawer(
 				{
 					(props.section === "quests" && props.quests) && (
 						<div className='w-full h-full max-h-full flex flex-col mt-4 overflow-auto'>	
-							<div className='w-full inline-flex items-center justify-center absolute top-0 left-1/2 -translate-x-1/2 -mt-9'>
+							<div className='w-full inline-flex items-center justify-center absolute top-[6%] left-1/2 -translate-x-1/2 -mt-9'>
 								<Image src={'/icons/notification.png'} alt="Logo" width={128} height={128} className="w-16 h-16 object-contain" draggable={false} priority/>
 							</div>
-							<div className='w-full flex flex-col'>
+							<div className='w-full flex flex-col mt-10'>
 								<QuestCard
 								reward={5000}
 								iconURL={'/icons/referral.png'}

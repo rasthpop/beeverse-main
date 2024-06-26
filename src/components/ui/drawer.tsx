@@ -3,6 +3,7 @@
 import * as React from "react"
 import { Drawer as DrawerPrimitive } from "vaul"
 
+
 import { cn } from "@/lib/utils"
 
 const Drawer = ({
@@ -43,7 +44,7 @@ const DrawerContent = React.forwardRef<
     <DrawerPrimitive.Content
       ref={ref}
       className={cn(
-        "fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto max-h-full flex-col rounded-t-3xl  border-border bg-primary px-4 pt-1 pb-4 outline-none ring-0",
+        "fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto  flex-col bg-top bg-cover bg-no-repeat bg-[url('/backgrounds/drawer.png')]  px-4 pt-1 pb-4  ring-0",
         className
       )}
       {...props}
