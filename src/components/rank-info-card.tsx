@@ -14,7 +14,7 @@ export default function RankInfoCard(
 		currentbalance: number;
 	}
 ) {
-	const progressint = props.currentbalance / props.requiredAmount
+	const progressint = (props.currentbalance * 100) / props.requiredAmount
 	return(
 		<div className='w-full inline-flex gap-2'>
 			<div className='inline-flex items-center justify-center'>
