@@ -119,7 +119,7 @@ export default function MenuDrawer(
 				</div>
 				{
 					(props.section === "leaderboard" && props.leaders) && (
-						<div className='w-full min-h-[212px] max-h-[412px] rounded-3xl bg-backdrop mt-4 overflow-auto mb-12 '>
+						<div className='w-full min-h-[212px] max-h-[412px] rounded-3xl bg-backdrop mt-4 overflow-auto '>
 							<Table className='flex justify-center  '>
 								{/* <TableHeader>
 									<TableRow>
