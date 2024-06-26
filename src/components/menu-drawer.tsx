@@ -262,7 +262,7 @@ export default function MenuDrawer(
 
 						<Button
 						// claim treasure
-						className=' h-14 w-[58%] mt-auto mb-[50px] text-[20px] rounded-[64px]'
+						className=' h-14 w-[58%] mt-auto mb-4 text-[20px] rounded-[64px]'
 						>
 							Claim 1,500 <img src='/icons/honey.png' className='ml-[2px]' />
 						</Button>	
