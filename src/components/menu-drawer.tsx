@@ -137,6 +137,7 @@ export default function MenuDrawer(
 											</div>
 											<TableCell className={`max-w-full text-center mr-auto truncate text-normal-stroke ${idx < 3 && ' text-[20px]'} ${idx === 0? "text-[gold]" : idx === 1? "text-[#cecdcd]" : idx == 2? "text-[#ffa041]" : "text-[white]"} `}>{leader.username || "unidentified"}</TableCell>
 											<TableCell className="ml-[47px] max-w-full text-center text-normal-stroke">{(leader.balance).toLocaleString('en')}</TableCell>
+											<span>Honey</span>
 										</TableRow>
 							
 									))}
@@ -244,20 +245,27 @@ export default function MenuDrawer(
 				}
 				{
 					props.section === "bonus" && (
-						<div className='w-full h-[332px] max-h-full align-center flex flex-col mt-4 overflow-auto'>
+						<div className='w-full h-[332px] max-h-full items-center flex flex-col mt-4 overflow-auto'>
 
 						<div className='w-full inline-flex items-center justify-center absolute top-0 left-1/2 -translate-x-1/2 -mt-9'>
 						<Image src={'/icons/chest.png'} alt="Logo" width={128} height={128} className="w-16 h-16 object-contain" draggable={false} priority/>
 						</div>
-						<div className='flex text-[17px]'>
+						<div className='flex text-[16px]'>
 							<div className='bg-backdrop w-[137px] h-[137px] flex-shrink-0 mr-[13px] rounded-[20px]'></div>
 							<div>
 								<span>Every 4 hours, your worker bees will bring you more honey! Specifically, 0.5% of your balance.</span>
-								<p className=''>Your passive income now: <HoneyDisplay amount={100} iconSize={17} /> </p>
+								<p className=''>Your passive income now:  </p>
+													{/* 0.5% of balance  */}
+								<div className='flex'>	<p> 1,500</p> <img src='/icons/honey.png' className='ml-[2px]' />	</div>
 							</div>
 						</div>
 
-							
+						<Button
+						// claim treasure
+						className=' h-[41px] w-[171px] mt-[21px] '
+						>
+
+						</Button>	
 					</div>
 				)
 				}
