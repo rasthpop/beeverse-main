@@ -251,20 +251,20 @@ export default function MenuDrawer(
 						<Image src={'/icons/chest.png'} alt="Logo" width={128} height={128} className="w-16 h-16 object-contain" draggable={false} priority/>
 						</div>
 						<div className='flex text-[16px]'>
-							<div className='bg-backdrop w-[137px] h-[137px] flex-shrink-0 mr-[13px] rounded-[20px]'></div>
+							<div className='bg-backdrop w-[154px] h-[154px] flex-shrink-0 mr-[13px] rounded-[20px]'></div>
 							<div>
 								<span>Every 4 hours, your worker bees will bring you more honey! Specifically, 0.5% of your balance.</span>
 								<p className=''>Your passive income now:  </p>
 													{/* 0.5% of balance  */}
-								<div className='flex'>	<p> 1,500</p> <img src='/icons/honey.png' className='ml-[2px]' />	</div>
+								<div className='flex text-[18px]'>	<p> 1,500</p> <img src='/icons/honey.png' className='ml-[2px]' />	</div>
 							</div>
 						</div>
 
 						<Button
 						// claim treasure
-						className=' h-[41px] w-[171px] mt-[21px] '
+						className=' h-10 w-36 mt-auto mb-[50px] rounded-36'
 						>
-
+							Claim 1,500 <img src='/icons/honey.png' className='ml-[2px]' />
 						</Button>	
 					</div>
 				)
