@@ -21,7 +21,7 @@ export default function RankInfoCard(
 				<RankIcon
 				name={props.name}
 				url={`/icons/levels/${props.name}.png`}
-				size={96}
+				size={128}
 				textClass='text-xl font-bold mt-0.5'
 				/>
 			</div>
