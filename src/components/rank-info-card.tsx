@@ -11,9 +11,10 @@ export default function RankInfoCard(
 		requiredAmount: number;
 		bonusAmount: number;
 		progress: number;
+		currentbalance: number;
 	}
 ) {
-	
+	const progressint = props.currentbalance / props.requiredAmount
 	return(
 		<div className='w-full inline-flex gap-2'>
 			<div className='inline-flex items-center justify-center'>
@@ -24,12 +25,9 @@ export default function RankInfoCard(
 				textClass='text-xl font-bold mt-0.5'
 				/>
 			</div>
-			<div className='w-full flex flex-col items-start justify-center'>
-				<HoneyDisplay amount={props.requiredAmount} iconSize={32} />
-				{/* <div>
-					<p>{(props.progress).toLocaleString('en')}/{(props.requiredAmount).toLocaleString('en')}<span></span> </p>
-					<Progress value={props.progress} content="Immortal"/>
-				</div> */}
+			<div className='w-full flex flex-col items-start justify-center mb-4'>
+				{/* <HoneyDisplay amount={props.requiredAmount} iconSize={32} /> */}
+				<Progress value={progressint} content={`${props.currentbalance}/${props.requiredAmount}`} className="bg-[url(/interface/target-progress.png)]"/>
 				<p className='text-foreground text-base font-medium leading-5'>{props.description} + <span><HoneyDisplay amount={props.bonusAmount} iconSize={18} textClass='text-sm text-normal-stroke' /></span></p>
 			</div>
 		</div>

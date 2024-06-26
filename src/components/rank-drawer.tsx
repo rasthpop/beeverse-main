@@ -23,6 +23,8 @@ export default function RankDrawer() {
 
 	const [isOpen, setIsOpen] = React.useState<boolean>(false);
 
+
+
 	return(
 		<Drawer open={isOpen}>
 			<DrawerTrigger
@@ -54,6 +56,7 @@ export default function RankDrawer() {
 						iconURL={`/icons/levels/${rank.name}.png`}
 						requiredAmount={rank.required_amount}
 						bonusAmount={rank.bonus_amount}
+						currentbalance={user?.balance || 0}
 						progress={
 							rank.id === (userRank?.id || ranks[0])
 							? (user?.balance || 0)
