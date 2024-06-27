@@ -283,7 +283,7 @@ export default function MenuDrawer(
 				{
 					(props.section === "quests" && props.quests) && (
 						<div className='w-full h-full max-h-full flex flex-col mt-4 overflow-auto'>	
-							<div className='w-full inline-flex items-center justify-center absolute top-[6%] left-1/2 -translate-x-1/2 -mt-9'>
+							<div className='w-full inline-flex items-center justify-center absolute top-[11%] left-1/2 -translate-x-1/2 -mt-9'>
 								<Image src={'/icons/notification.png'} alt="Logo" width={128} height={128} className="w-16 h-16 object-contain" draggable={false} priority/>
 							</div>
 							<div className='w-full flex flex-col mt-4'>
