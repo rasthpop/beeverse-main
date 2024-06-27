@@ -253,10 +253,10 @@ export default function MenuDrawer(
 				}
 				{
 					props.section === "bonus" && (
-						<div className='w-full h-[235px] max-h-full items-center flex flex-col mt-4 ml-2 overflow-auto'>
+						<div className='w-full min-h-full max-h-full items-center flex flex-col mt-4 ml-2 overflow-auto'>
 							
 
-						<div className='w-full inline-flex items-center justify-center absolute top-[7%] left-1/2 -translate-x-1/2 -mt-9'>
+						<div className='w-[95%] inline-flex items-center justify-center absolute top-[7%] left-1/2 -translate-x-1/2 -mt-9'>
 						<Image src={'/icons/chest.png'} alt="Logo" width={128} height={128} className="w-16 h-16 object-contain" draggable={false} priority/>
 						</div>
 						<div className='flex text-[16px]'>
@@ -273,7 +273,7 @@ export default function MenuDrawer(
 
 						<Button
 						// claim treasure
-						className=' h-12 w-[50%] mt-auto mb-2 text-[20px] rounded-[64px] border-2'
+						className=' h-12 w-[50%] mt-6 mb-2 text-[20px] rounded-[64px] border-2'
 						>
 							Get 1,500 <img src='/icons/honey.png' className='ml-[2px] w-6 h-6' />
 						</Button>	
