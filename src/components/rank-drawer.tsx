@@ -47,7 +47,7 @@ export default function RankDrawer() {
 						</svg>
 					</Button>
 				</div>
-				<div className='w-full h-[422px] max-h-full flex flex-col gap-6 mt-4 overflow-auto'>
+				<div className='w-full h-auto max-h-full flex flex-col gap-4 mt-4 overflow-auto'>
 					{ranks.map((rank, idx) => (
 						<RankInfoCard
 						key={idx}
