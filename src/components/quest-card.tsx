@@ -33,7 +33,7 @@ export default function QuestCard(
 	return(
         <div className="w-full min-h-fit h-[90px] rounded-2xl inline-flex gap-2 items-center justify-between p-2">
             <div className="h-full inline-flex items-center justify-center p-2">
-                <Avatar className={`w-14 h-14 ${(!isUrlTelegram && !isUrlX) ? "rounded-none" : "rounded-full"}`}>
+                <Avatar className={`w-14 h-14 ${(!isUrlTelegram && !isUrlX) ? "rounded-none" : "rounded-full"} ${isUrlX && "object-contain" } `}>
                     <AvatarImage
                     src={isUrlTelegram && "/icons/tg.png" || isUrlX && "/icons/x.png" || props.iconURL}
                     alt="avatar"
@@ -53,7 +53,7 @@ export default function QuestCard(
 				<div className="h-full inline-flex items-center justify-end">
                 	<Button
 					variant={'default'}
-					className="w-24 border-2 font-medium !text-gold text-normal-stroke rounded-full py-1"
+					className="w-24 border-2 font-medium text-normal-stroke rounded-full py-1"
 					onClick={() => {
 						utils && props.actionURL && (
 							isUrlTelegram 

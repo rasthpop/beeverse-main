@@ -16,7 +16,8 @@ export default function RankInfoCard(
 ) {
 	const progressint = (props.currentbalance * 100) / props.requiredAmount
 	return(
-		<div className='w-full inline-flex gap-2'>
+		<div className='bg-[url(/backgrounds/tab.png)] bg-cover bg-no-repeat w-full bg-center'>
+		<div className='w-full inline-flex gap-2  '>
 			<div className='inline-flex items-center justify-center'>
 				<RankIcon
 				name={props.name}
@@ -30,6 +31,7 @@ export default function RankInfoCard(
 				<Progress value={0} content={`${props.currentbalance}/${props.requiredAmount}`} className="bg-[url(/interface/target-progress.png)] "/>
 				<p className='text-foreground text-base font-medium leading-5 ml-[10px]'>Reward: {props.description} + <span><HoneyDisplay amount={props.bonusAmount} iconSize={18} textClass='text-sm text-normal-stroke font-not-bold' /></span></p>
 			</div>
+		</div>
 		</div>
 	)
 }

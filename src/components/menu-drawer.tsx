@@ -253,7 +253,7 @@ export default function MenuDrawer(
 				}
 				{
 					props.section === "bonus" && (
-						<div className='w-full h-[332px] max-h-full items-center flex flex-col mt-4 ml-2 overflow-auto'>
+						<div className='w-full h-[245px] max-h-full items-center flex flex-col mt-4 ml-2 overflow-auto'>
 							
 
 						<div className='w-full inline-flex items-center justify-center absolute top-[7%] left-1/2 -translate-x-1/2 -mt-9'>
@@ -266,7 +266,7 @@ export default function MenuDrawer(
 							<div>
 								<span>Every 4 hours, your worker bees will bring you more honey! Specifically, 0.5% of your balance.</span>
 								<p className=''>Your passive income now:  </p>
-													{/* 0.5% of balance  */}
+																			{/* 0.5% of balance  */}
 								<div className='flex text-[18px] items-center'>	<p> 1,500</p> <img src='/icons/honey.png'  className='ml-[2px] w-4 h-4' />	</div>
 							</div>
 						</div>
@@ -286,32 +286,18 @@ export default function MenuDrawer(
 							<div className='w-full inline-flex items-center justify-center absolute top-[6%] left-1/2 -translate-x-1/2 -mt-9'>
 								<Image src={'/icons/notification.png'} alt="Logo" width={128} height={128} className="w-16 h-16 object-contain" draggable={false} priority/>
 							</div>
-							<div className='w-full flex flex-col mt-10'>
+							<div className='w-full flex flex-col mt-4'>
 								<QuestCard
 								reward={5000}
 								iconURL={'/icons/referral.png'}
-								title={'Invite your friend!'}
-								actionTitle='Referral'
+								title={'Invite your 1 friend!'}
+								actionTitle='Complete'
 								/>
-								<QuestCard
-								reward={25000}
-								iconURL={'/icons/referral-premium.png'}
-								title={'Invite your premium friend!'}
-								actionTitle='Referral'
-								/>
-								{
-									props.quests.map((quest, idx) => (
-										<QuestCard
-										key={idx}
-										reward={quest.reward}
-										iconURL={'/icons/referral-premium.png'}
-										title={quest.terms}
-										actionTitle='Join'
-										actionURL={quest.link}
-										/>
-									))
-								}
+
 							</div>
+
+
+
 						</div>
 					)
 				}
