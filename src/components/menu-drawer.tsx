@@ -253,7 +253,7 @@ export default function MenuDrawer(
 				}
 				{
 					props.section === "bonus" && (
-						<div className='w-full h-[332px] max-h-full items-center flex flex-col mt-4 overflow-auto'>
+						<div className='w-full h-[332px] max-h-full items-center flex flex-col mt-4 ml-2 overflow-auto'>
 							
 
 						<div className='w-full inline-flex items-center justify-center absolute top-[7%] left-1/2 -translate-x-1/2 -mt-9'>
