@@ -11,6 +11,7 @@ import InfoPopover from "@/components/info-popover";
 import MenuButton from "@/components/menu-drawer";
 import RankDrawer from "@/components/rank-drawer";
 import { TAP_PROFIT } from "@/constants";
+import { Bee } from "@/components/ui/bee";
 
 
 export default function Page() {
@@ -46,7 +47,7 @@ export default function Page() {
 	if (isContext) return router.replace('/');
 	return (
 		<main className="grow w-full h-screen bg-[url(/back.gif)] bg-center bg-no-repeat bg-cover flex flex-col relative overflow-auto z-0">
-			<div className="absolute top-1/2 z-[99]">VERSION: 0.5 </div>
+			<div className="absolute top-1/2 z-[99]">VERSION: 0.6 </div>
 			<section id="main-section" className="w-full h-full flex flex-col items-center justify-between z-20 mt-6">
 				<div id="main-top-box" className="w-full flex flex-col justify-between gap-1">
 					<div className="w-full h-14 inline-flex items-center justify-between gap-1.5 px-4 relative">
@@ -90,6 +91,7 @@ export default function Page() {
 						priority
 						/>
 					</div>
+					<Bee/>
 				</div>
 				<div id="main-bottom-box" className="w-full inline-flex items-center justify-center mb-4">
 					<div className="w-full relative">
