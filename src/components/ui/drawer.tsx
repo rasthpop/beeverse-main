@@ -44,8 +44,8 @@ const DrawerContent = React.forwardRef<
     <DrawerPrimitive.Content
       ref={ref}
       className={cn(
-        // bg-[url('/backgrounds/drawer.png')]
-        "fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto  flex-col bg-top bg-cover bg-no-repeat bg-slate-400  px-4 pt-1 pb-10  ring-0",
+        // 
+        "fixed inset-x-0 bottom-0 z-50 mt-24 flex h-auto  flex-col bg-top bg-cover bg-no-repeat bg-[url('/backgrounds/drawer.png')] px-4 pt-1 pb-10  ring-0",
         className
       )}
       {...props}
