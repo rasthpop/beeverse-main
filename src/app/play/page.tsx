@@ -1,6 +1,6 @@
 "use client"
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { Progress } from "@/components/ui/progress";
 import { useData } from "@/controllers/context";
@@ -16,6 +16,7 @@ import { Bee } from "@/components/ui/bee";
 
 export default function Page() {
 
+	const [hurt, setIsHurt] = useState(false)
 	const router = useRouter();
 	// Context
 	const {
@@ -42,12 +43,17 @@ export default function Page() {
 		} else {
 			const isTapDone = handlePlayerTap(TAP_PROFIT);
 		}
+		setIsHurt(true);
+		setTimeout(() => {
+		  setIsHurt(false);
+		}, 135);
+
 	}
 
 	if (isContext) return router.replace('/');
 	return (
-		<main className="grow w-full h-screen bg-[url(/back.gif)] bg-center bg-no-repeat bg-cover flex flex-col relative overflow-auto z-0">
-			<div className="absolute top-1/2 z-[99]">VERSION: 0.6 </div>
+		<main className="grow w-full h-screen bg-[url(/back.png)] bg-center bg-no-repeat bg-cover flex flex-col relative overflow-auto z-0">
+			<div className="absolute top-1/2 z-[99]">VERSION: 0.7 </div>
 			<section id="main-section" className="w-full h-full flex flex-col items-center justify-between z-20 mt-6">
 				<div id="main-top-box" className="w-full flex flex-col justify-between gap-1">
 					<div className="w-full h-14 inline-flex items-center justify-between gap-1.5 px-4 relative">
@@ -82,7 +88,7 @@ export default function Page() {
 					onClick={!isPhone ? coinInteraction : undefined}
 					>
 						<Image
-						src={"/bear_idle.gif"}
+						src={`${hurt? "/bear_damage.gif"  :"/bear_idle.gif"}`}
 						alt="Logo"
 						width={1024}
 						height={1024}
@@ -91,7 +97,9 @@ export default function Page() {
 						priority
 						/>
 					</div>
-					<Bee/>
+					<Bee 
+					attack={hurt}
+					/>
 				</div>
 				<div id="main-bottom-box" className="w-full inline-flex items-center justify-center mb-4">
 					<div className="w-full relative">
