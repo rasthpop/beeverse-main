@@ -7,7 +7,7 @@ import { Drawer as DrawerPrimitive } from "vaul"
 import { cn } from "@/lib/utils"
 
 const Drawer = ({
-  shouldScaleBackground = false,
+  shouldScaleBackground = true,
   ...props
 }: React.ComponentProps<typeof DrawerPrimitive.Root>) => (
   <DrawerPrimitive.Root
@@ -44,8 +44,8 @@ const DrawerContent = React.forwardRef<
     <DrawerPrimitive.Content
       ref={ref}
       className={cn(
-        // 
-        "fixed inset-x-0 bottom-0 z-50 mt-24 flex  flex-col bg-top bg-cover bg-no-repeat bg-[url('/backgrounds/drawer.png')] px-4 pt-1  ring-0",
+        //bg-[url('/backgrounds/drawer.png')] 
+        "fixed inset-x-0 bottom-0 z-50 mt-24 flex  flex-col bg-top bg-cover bg-no-repeat  px-4 pt-1  ring-0",
         className
       )}
       {...props}
