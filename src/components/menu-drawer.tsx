@@ -121,7 +121,7 @@ export default function MenuDrawer(
 					(props.section === "leaderboard" && props.leaders) && (
 					<div className='flex justify-center pb-8'>
 						{/* min-h-[212px] max-h-[504px]  */}
-						<div className='w-[96%] rounded-3xl bg-backdrop mt-8  overflow-auto '>
+						<div className='w-[96%] rounded-3xl max-h-[504px] bg-backdrop mt-8  overflow-auto '>
 							<Table className='flex justify-center  '>
 								{/* <TableHeader>
 									<TableRow>
