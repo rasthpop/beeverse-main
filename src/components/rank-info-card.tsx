@@ -18,7 +18,7 @@ export default function RankInfoCard(
 	return(
 		<div className='bg-[url(/backgrounds/tab.png)] bg-cover bg-no-repeat w-full bg-center'>
 		<div className='w-full inline-flex gap-2  '>
-			<div className='inline-flex items-center justify-center'>
+			<div className='inline-flex items-center justify-center pl-2'>
 				<RankIcon
 				name={props.name}
 				url={`/icons/levels/${props.name}.png`}

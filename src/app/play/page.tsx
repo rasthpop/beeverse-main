@@ -12,6 +12,7 @@ import MenuButton from "@/components/menu-drawer";
 import RankDrawer from "@/components/rank-drawer";
 import { TAP_PROFIT } from "@/constants";
 import { Bee } from "@/components/ui/bee";
+import BossLoot from "@/components/ui/boos-loot";
 
 
 
@@ -54,7 +55,7 @@ export default function Page() {
 	if (isContext) return router.replace('/');
 	return (
 		<main className="grow w-full h-screen overflow-auto bg-[url(/back.png)] bg-center bg-no-repeat bg-cover flex flex-col relative  z-0">
-			<div className="absolute top-1/2 z-[99]">VERSION: 1.2 </div>
+			<div className="absolute top-1/2 z-[99]">VERSION: 1.3 </div>
 			<section id="main-section" className="w-full h-full flex flex-col items-center justify-between z-20 mt-6">
 				<div id="main-top-box" className="w-full flex flex-col justify-between gap-1">
 					<div className="w-full fixed h-14 inline-flex items-center justify-between gap-1.5 px-4 ">
@@ -79,11 +80,12 @@ export default function Page() {
 						isLocked={false}
 						/>
 						<TargetStatsCard title={"HP Heal"} data={"Coming soon"} isLocked={true} />
-						<TargetStatsCard title={"Treasure"} data={"Coming soon"} isLocked={true} />
+						<TargetStatsCard title={"Loot"} data={<BossLoot award={25000} />} isLocked={false} />
 					</div>
 					<Progress value={100} content="Immortal" className="fixed top-[155px] bg-[url(/interface/target-progress.png)] "/>
 				</div>
 				<div className="w-full h-full inline-flex items-center justify-center px-4 py-2">
+								{/* Bear */}
 					<div
 					onTouchStart={isPhone ? coinInteraction : undefined}
 					onClick={!isPhone ? coinInteraction : undefined}
