@@ -52,8 +52,8 @@ export default function Page() {
 
 	if (isContext) return router.replace('/');
 	return (
-		<main className="grow w-full h-dvh overflow-auto bg-[url(/back.png)] bg-center bg-no-repeat bg-cover flex flex-col relative  z-0">
-			<div className="absolute top-1/2 z-[99]">VERSION: 0.9 </div>
+		<main className="grow w-full h-[85%] overflow-auto bg-[url(/back.png)] bg-center bg-no-repeat bg-cover flex flex-col relative  z-0">
+			<div className="absolute top-1/2 z-[99]">VERSION: 1.0 </div>
 			<section id="main-section" className="w-full h-full flex flex-col items-center justify-between z-20 mt-6">
 				<div id="main-top-box" className="w-full flex flex-col justify-between gap-1">
 					<div className="w-full h-14 inline-flex items-center justify-between gap-1.5 px-4 relative">
