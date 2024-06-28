@@ -52,11 +52,11 @@ export default function Page() {
 
 	if (isContext) return router.replace('/');
 	return (
-		<main className="grow w-full h-[85%] overflow-auto bg-[url(/back.png)] bg-center bg-no-repeat bg-cover flex flex-col relative  z-0">
-			<div className="absolute top-1/2 z-[99]">VERSION: 1.0 </div>
+		<main className="grow w-full h-screen overflow-auto bg-[url(/back.png)] bg-center bg-no-repeat bg-cover flex flex-col relative  z-0">
+			<div className="absolute top-1/2 z-[99]">VERSION: 1.1 </div>
 			<section id="main-section" className="w-full h-full flex flex-col items-center justify-between z-20 mt-6">
 				<div id="main-top-box" className="w-full flex flex-col justify-between gap-1">
-					<div className="w-full h-14 inline-flex items-center justify-between gap-1.5 px-4 relative">
+					<div className="w-full fixed h-14 inline-flex items-center justify-between gap-1.5 px-4 ">
 						<div className="min-w-14 min-h-14 inline-flex items-center justify-center">
 							<RankDrawer />
 						</div>
@@ -69,7 +69,7 @@ export default function Page() {
 							</div>
 						</div>
 					</div>
-					<div className="w-full h-20 bg-[url(/interface/target-box.png)] bg-center bg-no-repeat bg-contain rounded-xl inline-flex items-center justify-center px-12 relative">
+					<div className=" fixed top-[75px] w-full h-20 bg-[url(/interface/target-box.png)] bg-center bg-no-repeat bg-contain rounded-xl inline-flex items-center justify-center px-12 ">
 						<TargetStatsCard
 						title={"Blue Orc"}
 						data={"Level 999"}
@@ -80,7 +80,7 @@ export default function Page() {
 						<TargetStatsCard title={"HP Heal"} data={"Coming soon"} isLocked={true} />
 						<TargetStatsCard title={"Treasure"} data={"Coming soon"} isLocked={true} />
 					</div>
-					<Progress value={100} content="Immortal" className="bg-[url(/interface/target-progress.png)]"/>
+					<Progress value={100} content="Immortal" className="fixed top-[155px] bg-[url(/interface/target-progress.png)] "/>
 				</div>
 				<div className="w-full h-full inline-flex items-center justify-center px-4 py-2">
 					<div
@@ -101,7 +101,7 @@ export default function Page() {
 					attack={hurt}
 					/>
 				</div>
-				<div id="main-bottom-box" className="w-full inline-flex items-center justify-center mb-4">
+				<div id="main-bottom-box" className="fixed bottom-0 w-full inline-flex items-center justify-center mb-4">
 					<div className="w-full relative">
 						<div className="w-full h-20 bg-[url(/interface/menu.png)] bg-center bg-no-repeat bg-cover rounded-xl inline-flex items-end justify-center px-4 pb-3 relative">
 							<MenuButton
