@@ -40,7 +40,7 @@ export default function TargetStatsCard(
 			}
             <div className="w-full h-full flex flex-col items-center justify-center">
                 <h4 className="text-xl text-foreground text-title-stroke whitespace-nowrap">{props.title}</h4>
-				<div className='w-full inline-flex items-center justify-center gap-0.5'>
+				<div className='w-full inline-flex items-center justify-center gap-0.5' >
 					{
 						props.iconDataURL && (
 							<Image
@@ -54,7 +54,7 @@ export default function TargetStatsCard(
 							/>
 						)
 					}
-					<p className="w-full flex text-xs text-foreground font-montserrat text-center font-medium text-normal-stroke whitespace-nowrap">{props.title === "Loot" && <img src='/icons/honey.png' className="w-4 h-4" /> }{props.data}</p>
+					<div className="w-full flex justify-center text-xs text-foreground font-montserrat text-center font-medium text-normal-stroke whitespace-nowrap">{props.title === "Loot" && <img src='/icons/honey.png' className="w-4 h-4" /> }{props.data}</div>
 				</div>
             </div>
         </div>
