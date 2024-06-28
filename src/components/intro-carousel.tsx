@@ -52,7 +52,7 @@ export function IntroCarouselDApi(
                 ) }
               </div>
               <div className="grow w-full rounded-2xl relative overflow-hidden ">
-                <div className="grow w-full h-2/3 bg-gradient-to-t from-[#322418] from-30% via-transparent via-70% to-transparent to-100% absolute left-0 bottom-0 z-20"></div>
+                {/* <div className="grow w-full h-2/3 bg-gradient-to-t from-[#322418] from-30% via-transparent via-70% to-transparent to-100% absolute left-0 bottom-0 z-20"></div> */}
                 <div className="grow  rounded-t-2xl pt-1.5 overflow-hidden">
                   <Image
                   src={item.imageURL}
