@@ -2,29 +2,30 @@ import { IntroCarouselDApi } from "@/components/intro-carousel";
 
 const items: IntroItem[] = [
   {
-    title: "Кликайте на экран и зарабатывайте мёд!",
-    subtitle: "Вы можете использовать бусты и хитрые стратегии",
-    imageURL: "/intro/1.webp"
+    title: "Fight bosses and collect their loot!",
+    subtitle: "Fight and earn honey!",
+    imageURL: "/intro/intro1.webp"
   },
   {
-    title: "Улучшайте свою пасеку!",
-    subtitle: "Используйте карточки, чтобы увеличить свой пассивный доход",
-    imageURL: "/intro/2.webp"
+    title: "Increase your Alpha Rank!",
+    subtitle: "Alpha ranks will allow you to receive unique rewards in the main release of the game!",
+    imageURL: "/intro/intro2.webp"
   },
   {
-    title: "Приглашайте друзей и получайте бонусы вместе",
-    subtitle: "Мёд получите и вы, и ваш друг",
-    imageURL: "/intro/3.webp"
+    title: "Invite friends and earn bonuses together",
+    subtitle: "Both you and your friend will receive honey.",
+    imageURL: "/intro/intro3.webp"
   },
   {
-    title: "Выполняйте задания и получайте вознаграждения!",
-    imageURL: "/intro/4.webp"
+    title: "Complete quests and earn rewards!",
+    subtitle:"Quests will help you earn honey faster and climb up the leaderboard!",
+    imageURL: "/intro/intro4.webp"
   },
 ];
 
 export default function Page() {
   return (
-    <main className="grow w-full h-full bg-black flex flex-col items-center justify-center pt-10 select-none z-40">
+    <main className="grow w-full h-full bg-[#322418] flex flex-col items-center justify-center pt-10 select-none z-40">
       <IntroCarouselDApi items={items} href='/play'/>
     </main>
   );
