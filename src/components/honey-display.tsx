@@ -14,7 +14,7 @@ export default function HoneyDisplay(
 	 <div className='inline-flex items-center justify-center'>
 		<h1 
 		className={cn(
-			`text-2xl ${props.isBold && "font-bold"} text-foreground text-title-stroke`,
+			`text-lg ${props.isBold && "font-bold"} text-foreground text-title-stroke min-[416px]:text-xl min-[448px]:text-2xl`,
 			props.textClass
 		)}
 		>
