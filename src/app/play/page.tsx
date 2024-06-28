@@ -17,7 +17,6 @@ import BossLoot from "@/components/ui/boos-loot";
 
 
 export default function Page() {
-
 	const [hurt, setIsHurt] = useState(false)
 	const router = useRouter();
 	// Context
@@ -80,7 +79,7 @@ export default function Page() {
 						isLocked={false}
 						/>
 						<TargetStatsCard title={"HP Heal"} data={"Coming soon"} isLocked={true} />
-						<TargetStatsCard title={"Loot"} data={<BossLoot award={25000} />} isLocked={false} />
+						<TargetStatsCard title={"Loot"} data={"25000"} isLocked={false} />
 					</div>
 					<Progress value={100} content="Immortal" className="fixed top-[155px] bg-[url(/interface/target-progress.png)] "/>
 				</div>

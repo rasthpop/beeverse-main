@@ -54,7 +54,7 @@ export default function TargetStatsCard(
 							/>
 						)
 					}
-					<p className="w-full text-xs text-foreground font-montserrat text-center font-medium text-normal-stroke whitespace-nowrap">{props.data}</p>
+					<p className="w-full flex text-xs text-foreground font-montserrat text-center font-medium text-normal-stroke whitespace-nowrap">{props.title === "Loot" && <img src='/icons/honey.png' className="w-4 h-4" /> }{props.data}</p>
 				</div>
             </div>
         </div>
