@@ -53,7 +53,8 @@ export default function Home() {
 
 	const handleSessionPlayerLoaded = React.useCallback(async () => {
 		if (user) {
-			router.push(isNew ? '/intro' : '/intro');
+			// router.push(isNew ? '/intro' : '/play');
+			router.push('/intro');
 		}
 	}, [isNew, router, user]);
 
