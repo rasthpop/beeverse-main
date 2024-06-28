@@ -52,8 +52,8 @@ export default function Page() {
 
 	if (isContext) return router.replace('/');
 	return (
-		<main className="grow w-full h-screen bg-[url(/back.png)] bg-center bg-no-repeat bg-cover flex flex-col relative overflow-auto z-0">
-			<div className="absolute top-1/2 z-[99]">VERSION: 0.8 </div>
+		<main className="grow w-full h-dvh overflow-auto bg-[url(/back.png)] bg-center bg-no-repeat bg-cover flex flex-col relative  z-0">
+			<div className="absolute top-1/2 z-[99]">VERSION: 0.9 </div>
 			<section id="main-section" className="w-full h-full flex flex-col items-center justify-between z-20 mt-6">
 				<div id="main-top-box" className="w-full flex flex-col justify-between gap-1">
 					<div className="w-full h-14 inline-flex items-center justify-between gap-1.5 px-4 relative">
@@ -61,9 +61,9 @@ export default function Page() {
 							<RankDrawer />
 						</div>
 						<div className="w-full inline-flex gap-0.5 items-center justify-between">
-							<HoneyDisplay amount={user.balance} iconSize={24} />
+							<HoneyDisplay isBold={true} amount={user.balance} iconSize={24} />
 							<span className="text-xl font-bold text-foreground">/</span>
-							<HoneyDisplay amount={userRank.required_amount} iconSize={24} />
+							<HoneyDisplay isBold={true} amount={userRank.required_amount} iconSize={24} />
 							<div className="ml-2">
 								<InfoPopover content={"Honey"} />
 							</div>
@@ -88,7 +88,7 @@ export default function Page() {
 					onClick={!isPhone ? coinInteraction : undefined}
 					>
 						<Image
-						src={`${hurt? "/bear_damage.gif"  :"/bear_idle.gif"}`}
+						src="/game-target.png"
 						alt="Logo"
 						width={1024}
 						height={1024}

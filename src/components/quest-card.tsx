@@ -45,7 +45,7 @@ export default function QuestCard(
             </div>
             <div className="w-full h-full inline-flex gap-1 items-center justify-between">
 				<div className="w-full max-w-32 h-full flex flex-col items-start justify-start">
-					<HoneyDisplay amount={props.reward} iconSize={24} />
+					<HoneyDisplay isBold={false} amount={props.reward} iconSize={24} />
 					<div className="w-full h-full inline-flex items-start justify-start">
 						<p className="text-base leading-5 text-foreground font-medium text-normal-stroke">{props.title}</p>
 					</div>

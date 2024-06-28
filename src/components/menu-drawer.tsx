@@ -159,22 +159,22 @@ export default function MenuDrawer(
 
 							<div className='w-[98%] flex flex-col gap-2 mt-6'>
 								<ReferralRewardCard avatarURL={'/icons/referral.png'} title={'Invite your friend!'} amount={5000} />
-								<ReferralRewardCard avatarURL={'/icons/referral-premium.png'} title={'Invite your premium friend!'} amount={25000} />
+								<ReferralRewardCard avatarURL={'/icons/referral-premium.png'} title={'Invite your premium friend!'} amount={10000} />
 							</div>
 							<div className='w-full flex flex-col gap-2 items-center justify-center mt-2'>
-								<p className='text-base font-medium text-foreground'>Referral Multiplier: <span className='text-gold'>1.0</span>X</p>
+								<p className='text-[14px] pl-2 font-medium text-foreground'>In addition to the bonus for inviting a friend, you also receive <span className='text-gold'> 0.5% of the balance of all your friends, as well as 0.1% of the balance of those invited by your friends!</span></p>
 								<Button
 								variant={'default'}
 								className='px-4 py-1.5 gap-0.5'
 								// onClick={() => refreshReferrals(player)}
 								>
-									Collect:
-									<HoneyDisplay amount={50000} iconSize={16} textClass='text-base' />
+									Get Income:
+									<HoneyDisplay isBold={false} amount={50000} iconSize={16} textClass='text-base' />
 								</Button>
 							</div>
 							<div className='w-[98%] flex flex-col items-center justify-center mt-4'>
 								<div className='w-[98%] inline-flex items-center justify-between'>
-									<p className='text-base text-title-stroke font-medium text-foreground'>List of your friends: {props.friends?.length || 0}</p>
+									<p className='text-base pl-2 text-title-stroke font-medium text-foreground'>List of your friends: {props.friends?.length || 0}</p>
 									<Button
 									variant={'ghost'}
 									size={'icon'}

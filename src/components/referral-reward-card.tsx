@@ -26,13 +26,13 @@ export default function ReferralRewardCard(
             </div>
             <div className="w-full h-full inline-flex gap-1 items-center justify-between">
 				<div className="w-full max-w-32 h-full flex flex-col items-start justify-start">
-					<HoneyDisplay amount={props.amount} iconSize={24} />
+					<HoneyDisplay isBold={false} amount={props.amount} iconSize={24} />
 					<div className="w-full h-full inline-flex items-end justify-start">
 						<p className="text-base leading-5 text-foreground font-medium text-normal-stroke">{props.title}</p>
 					</div>
 				</div>
-				<div className="h-full inline-flex items-end justify-end">
-                	<p className="text-base leading-5 text-gold font-medium text-end inline-flex gap-2 items-center align-middle">For you and your friend</p>
+				<div className="h-full inline-flex items-center justify-end">
+                	<p className="leading-5 text-gold text-center font-medium flex gap-2 align-middle">For you and your friend</p>
 				</div>
             </div>
         </div>
