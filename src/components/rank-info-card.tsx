@@ -16,7 +16,7 @@ export default function RankInfoCard(
 ) {
 	const progressint = (props.currentbalance * 100) / props.requiredAmount
 	return(
-		<div className='bg-[url(/backgrounds/tab.png)] bg-cover bg-no-repeat w-full bg-center'>
+		<div className='bg-[url(/backgrounds/tab.webp)] bg-cover bg-no-repeat w-full bg-center'>
 		<div className='w-full inline-flex gap-2  '>
 			<div className='inline-flex items-center justify-center pl-2'>
 				<RankIcon
