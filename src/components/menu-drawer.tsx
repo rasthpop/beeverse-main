@@ -292,8 +292,9 @@ export default function MenuDrawer(
 							<div className='w-full flex flex-col'>
 								<QuestCard
 								reward={75000}
-								iconURL={'/icons/email.png'}
+								iconURL={'/icons/referral.png'}
 								title={'Invite your 3 friends!'}
+								specialicon={'/icons/email.png'}
 								progress={1}
 								goal={3}
 								action='Referrals'

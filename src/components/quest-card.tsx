@@ -16,6 +16,7 @@ export default function QuestCard(
 		goal?: number;
 		waitcondition?: boolean;
 		action: string;
+		specialicon?: string;
 		description: string
 	}
 ) {
@@ -70,6 +71,7 @@ export default function QuestCard(
 			progress={props.progress}
 			goal={props.goal}
 			condition={props.waitcondition}
+			specialicon={props.specialicon}
 			/>
         </div>
     )

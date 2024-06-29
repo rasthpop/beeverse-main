@@ -17,6 +17,7 @@ export default function QuestDrawer(props:{
     section: string;
     buttontext: string;
     condition?: boolean;
+    specialicon?: string;
 
     progress?: number;
     goal?: number
@@ -42,7 +43,7 @@ export default function QuestDrawer(props:{
 							<div className={`w-full inline-flex items-center justify-center absolute ${props.questTittle === "Invite your 3 friends!"? "top-[48%]" : "top-[53%]"}  left-1/2 -translate-x-1/2 -mt-9`}>
 								<Image
 								src={
-                                    props.section
+                                     props.specialicon? props.specialicon : props.section
                                 }
 								alt="Logo"
 								width={64}
