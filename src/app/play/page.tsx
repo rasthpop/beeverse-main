@@ -54,7 +54,7 @@ export default function Page() {
 	if (isContext) return router.replace('/');
 	return (
 		<main className="grow w-full h-screen overflow-auto bg-green-900 bg-center bg-no-repeat bg-cover flex flex-col relative  z-0">
-			<div className="absolute top-1/2 z-[99]">VERSION: 1.58 </div>
+			<div className="absolute top-1/2 z-[99]">VERSION: 1.59 </div>
 			<section id="main-section" className="w-full h-full flex flex-col items-center justify-between z-20 mt-6">
 				<div id="main-top-box" className="w-full flex flex-col justify-between gap-1">
 					<div className="w-full fixed h-14 inline-flex items-center justify-between gap-1.5 px-4 ">
@@ -89,7 +89,7 @@ export default function Page() {
 					onTouchStart={isPhone ? coinInteraction : undefined}
 					onClick={!isPhone ? coinInteraction : undefined}
 					>
-						<Image
+						{/* <Image
 						src="/game-target.png"
 						alt="Logo"
 						width={1024}
@@ -97,11 +97,11 @@ export default function Page() {
 						className="h-full max-h-[372px] object-contain"
 						draggable={false}
 						priority
-						/>
+						/> */}
 					</div>
-					<Bee 
+					{/* <Bee 
 					attack={hurt}
-					/>
+					/> */}
 				</div>
 				<div id="main-bottom-box" className="fixed bottom-0 w-full inline-flex items-center justify-center mb-4">
 					<div className="w-full relative">
