@@ -11,11 +11,14 @@ import { Drawer, DrawerContent, DrawerTrigger } from "./ui/drawer";
 
 
 export default function QuestDrawer(props:{
-    questTittle: string,
-    questDescription: string,
-    questReward: number,
-    section: string,
-    buttontext: string
+    questTittle: string;
+    questDescription: string;
+    questReward: number;
+    section: string;
+    buttontext: string;
+
+    progress?: number;
+    goal?: number
 }){
 
     const [isOpen, setIsOpen] = React.useState<boolean>(false);
@@ -67,10 +70,12 @@ export default function QuestDrawer(props:{
 
                  <div className="px-12 mt-3 text-[14px] flex  flex-col">
                     <p>your tak is::::</p>
-                    <div className="text-[16px]"><span>Reward:</span> <span> <HoneyDisplay isBold={false} iconSize={16} amount={props.questReward} /> </span> </div>
-                    <div className="flex justify-center mt-4 mb-3">
+                    <div><span>Reward:</span> <span> <HoneyDisplay text={"14"} isBold={false} iconSize={16} amount={props.questReward} /> </span> </div>
+                    {props.progress && <div>Invited: ({props.progress}/{props.goal})</div>}
+                   
+                    <div className="flex justify-center mt-4 mb-3">             
                     <Button
-                    className="text-xl"
+                    className="text-xl px-10 py-2 rounded-full"
                     variant={'default'}
                     >
                         {props.buttontext}

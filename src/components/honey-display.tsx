@@ -7,6 +7,7 @@ export default function HoneyDisplay(
 		amount: number;
 		iconSize: number;
 		isBold: boolean;
+		text?: string
 	}
 ) {
 
@@ -14,7 +15,7 @@ export default function HoneyDisplay(
 	 <div className='inline-flex items-center justify-center'>
 		<h1 
 		className={cn(
-			`${props.isBold && "font-bold"} text-foreground text-title-stroke text-[16px]  min-[364px]: text-xl ${props.isBold && "min-[395px]:text-2xl"}`,
+			`${props.isBold && "font-bold"} text-foreground text-title-stroke text-[${props.text}] ${props.isBold && "min-[364px]: text-xl  min-[395px]:text-2xl"}`,
 			props.textClass
 		)}
 		>

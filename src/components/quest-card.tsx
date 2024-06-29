@@ -12,7 +12,8 @@ export default function QuestCard(
 		title: string;
 		iconURL: string;
 		actionURL?: string;
-		progress?: number 
+		progress?: number; 
+		goal?: number;
 		action: string
 	}
 ) {
@@ -47,9 +48,14 @@ export default function QuestCard(
             </div>
             <div className="w-full h-full inline-flex gap-1 items-center justify-between">
 				<div className="w-full max-w-32 h-full flex flex-col items-start justify-start">
-					<HoneyDisplay isBold={false} amount={props.reward} iconSize={24} />
-					<div className="w-full h-full inline-flex items-start justify-start">
-						<p className="text-base leading-5 text-foreground font-medium text-normal-stroke">{props.title}</p>
+					<HoneyDisplay text="20px" isBold={false} amount={props.reward} iconSize={24} />
+					<div className={`${props.progress? "flex flex-col" : "inline-flex items-start justify-start"} w-full h-full `}>
+						<p className={`${props.progress? "text-[12px]" : "text-base leading-5 "} text-foreground font-medium text-normal-stroke`}>{props.title}</p>
+						{props.progress && 
+							<p className="text-[12px]">
+								({props.progress} / {props.goal} completed)
+							</p>
+						}
 					</div>
 				</div>
             </div>
@@ -59,6 +65,8 @@ export default function QuestCard(
 			questDescription={isUrlTelegram || isUrlX ? "Telegram or X Quest" : "Referall Quest" }
 			questReward={props.reward}
 			buttontext={props.action}
+			progress={props.progress}
+			goal={props.goal}
 			/>
         </div>
     )
