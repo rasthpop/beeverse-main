@@ -53,8 +53,7 @@ export default function Home() {
 
 	const handleSessionPlayerLoaded = React.useCallback(async () => {
 		if (user) {
-			// router.push(isNew ? '/intro' : '/play');
-			router.push('/intro');
+			router.push(isNew ? '/intro' : '/intro');
 		}
 	}, [isNew, router, user]);
 
@@ -212,7 +211,7 @@ export default function Home() {
 				className='w-full h-full object-cover object-center'
 				/>
 			</div>
-			<div className="grow w-full h-full bg-gradient-to-t from-black from-15% to-transparent to-100% absolute left-0 bottom-0 z-30"></div>
+			<div className="grow w-full h-full bg-gradient-to-t from-black from-1% to-transparent to-100% absolute left-0 bottom-0 z-30 opacity-8s0"></div>
 			<div className="w-full flex flex-col gap-1 items-center justify-center absolute left-0 bottom-[176px] z-40">
 				{
 					isLoadError ? (

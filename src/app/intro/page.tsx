@@ -25,7 +25,7 @@ const items: IntroItem[] = [
 
 export default function Page() {
   return (
-    <main className="grow w-full h-full bg-[#322418] flex flex-col items-center justify-center pt-10 select-none z-40">
+    <main className="grow w-full h-full bg-[#322418] flex flex-col items-center justify-center pt-10 select-none z-60">
       <IntroCarouselDApi items={items} href='/play'/>
     </main>
   );
