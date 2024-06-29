@@ -28,7 +28,7 @@ export default function Page() {
 
 	const [atackInProgress, setAtackInProgress] = useState(false);
 	const [gameEnd, setGameEnd] = useState(false);
-	const clickTimeoutRef = useRef(null);
+	const clickTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
 	const [health, setHealth] = useState(maxHealt);
 	// Context
