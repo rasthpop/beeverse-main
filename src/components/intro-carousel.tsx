@@ -41,12 +41,12 @@ export function IntroCarouselDApi(
         <CarouselContent className="h-full z-10">
           {items.map((item, index) => (
             <CarouselItem key={index} className="h-full flex flex-col items-center justify-center">
-              <div className="min-h-32 flex flex-col gap-3 items-center justify-start px-4">
+              <div className="min-h-24 flex flex-col gap-3 items-center justify-start px-4">
                 <div className="h-16 inline-flex items-start justify-center text-center">
                   <h1 className="text-xl mt-auto text-foreground font-semibold">{item.title}</h1>
                 </div>
                 { item.subtitle && (
-                  <div className="h-12 inline-flex items-start justify-center">
+                  <div className="h-8 inline-flex items-start justify-center">
                     <p className="text-sm text-hint font-semibold text-center">{item.subtitle}</p>
                   </div>
                 ) }
