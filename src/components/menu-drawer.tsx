@@ -99,7 +99,7 @@ export default function MenuDrawer(
 							</div>
 						)
 					}
-					<h1 className={`w-full text-2xl font-medium text-center whitespace-nowrap absolute left-1/2 -translate-x-1/2 ${props.section === "leaderboard" || props.section === "quests"? "top-[90%]" : "top-[80%]" }  -translate-y-1/2`}>
+					<h1 className={`w-full text-2xl font-medium text-center whitespace-nowrap absolute left-1/2 -translate-x-1/2 ${props.section === "leaderboard" || props.section === "quests" ? "top-[90%]" : "top-[80%]" }  -translate-y-1/2`}>
 						{props.section === "ranks" && "Alpha Ranks Rewards:"}
 						{props.section === "friends" && `Referrals`}
 						{props.section === "bonus" && "Treasure"}
@@ -286,16 +286,40 @@ export default function MenuDrawer(
 				{
 					(props.section === "quests" && props.quests) && (
 						<div className='w-full h-full max-h-full flex flex-col mt-4 overflow-auto'>	
-							<div className='w-full inline-flex items-center justify-center absolute top-[11%] left-1/2 -translate-x-1/2 -mt-9'>
+							<div className='w-full inline-flex items-center justify-center absolute top-[7%] left-1/2 -translate-x-1/2 -mt-9'>
 								<Image src={'/icons/notification.png'} alt="Logo" width={128} height={128} className="w-16 h-16 object-contain" draggable={false} priority/>
 							</div>
-							<div className='w-full flex flex-col mt-4'>
+							<div className='w-full flex flex-col'>
 								<QuestCard
-								reward={5000}
+								reward={50000}
 								iconURL={'/icons/referral.png'}
-								title={'Invite your 1 friend!'}
-								actionTitle='Complete'
+								title={'Invite your 3 friends!'}
+								progress={0}
+								action='Referrals'
 								/>
+
+								<QuestCard
+								reward={50000}
+								iconURL={'/icons/tg.png'}
+								title={'Join our Telegram channel!'}
+								action='Join'
+								/>
+
+								<QuestCard
+								reward={50000}
+								iconURL={'/icons/tg.png'}
+								title={'Join our Telegram chat!'}
+								action='Join'
+								/>
+
+								<QuestCard
+								reward={50000}
+								iconURL={'/icons/x.png'}
+								title={'Join our Twitter!'}
+								action='Follow'
+								/>							
+								
+
 
 							</div>
 

@@ -4,14 +4,16 @@ import { useUtils } from "@tma.js/sdk-react";
 import HoneyDisplay from "./honey-display";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 import { Button } from "./ui/button";
+import QuestDrawer from "./quest-drawer";
 
 export default function QuestCard(
 	props: {
 		reward: number;
 		title: string;
 		iconURL: string;
-		actionTitle: string;
 		actionURL?: string;
+		progress?: number 
+		action: string
 	}
 ) {
 	const utils = useUtils(true);
@@ -50,22 +52,14 @@ export default function QuestCard(
 						<p className="text-base leading-5 text-foreground font-medium text-normal-stroke">{props.title}</p>
 					</div>
 				</div>
-				<div className="h-full inline-flex items-center justify-end">
-                	<Button
-					variant={'default'}
-					className="w-24 border-2 font-medium text-normal-stroke rounded-full py-1"
-					onClick={() => {
-						utils && props.actionURL && (
-							isUrlTelegram 
-							? utils.openTelegramLink(props.actionURL)
-							: utils.openLink(props.actionURL)
-						)
-					}}
-					>
-						{props.actionTitle}
-					</Button>
-				</div>
             </div>
+			<QuestDrawer 
+			section={props.iconURL}
+			questTittle={props.title}
+			questDescription={isUrlTelegram || isUrlX ? "Telegram or X Quest" : "Referall Quest" }
+			questReward={props.reward}
+			buttontext={props.action}
+			/>
         </div>
     )
 }
