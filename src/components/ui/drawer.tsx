@@ -5,6 +5,7 @@ import { Drawer as DrawerPrimitive } from "vaul"
 
 
 import { cn } from "@/lib/utils"
+import Image from "next/image"
 
 const Drawer = ({
   shouldScaleBackground = true,
@@ -45,13 +46,24 @@ const DrawerContent = React.forwardRef<
       ref={ref}
       className={cn(
         
-        "fixed inset-x-0 bottom-0 z-50 mt-24 flex bg-slate-300 flex-col bg-top bg-cover bg-no-repeat  px-4 pt-1 pb-4 ring-0",
+        "fixed inset-x-0 bottom-0 z-50 mt-24 flex  flex-col bg-top bg-cover bg-no-repeat  px-4 pt-1 pb-4 ring-0",
         className
       )}
       {...props}
     >
       {/* <div className="mx-auto mt-4 h-2 w-[100px] rounded-full bg-gray-100 dark:bg-gray-800" /> */}
+      <div className="z-10">
       {children}
+      </div>
+      <div className="absolute top-0 left-0 z-0 w-full">
+      <Image 
+          src="/backgrounds/drawer.webp"
+          width={500}
+          height={500}
+          className="object-contain"
+          alt="drawerimage"
+      />
+      </div>
     </DrawerPrimitive.Content>
   </DrawerPortal>
 ))
