@@ -22,7 +22,7 @@ const Progress = React.forwardRef<
       // FIX
       style={{ width: `${(value || 0)}%` }}
     />
-	<p className=" text-foreground align-middle font-medium text-normal-stroke absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2">{content}</p>
+	<p className=" text-foreground align-middle font-medium text-normal-stroke absolute left-1/2 -translate-x-1/2 top-[49%] -translate-y-1/2">{content}</p>
   </ProgressPrimitive.Root>
 ))
 Progress.displayName = ProgressPrimitive.Root.displayName
