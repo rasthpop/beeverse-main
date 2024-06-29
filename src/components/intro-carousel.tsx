@@ -70,13 +70,13 @@ export function IntroCarouselDApi(
 		<div className="z-[999] w-full">
 			<CarouselNext
 			variant={'default'}
-			className={`w-12 h-12 ${items.length === 1 && "left-1/2 -translate-x-1/2 z-[999]"}`}
+			className={`relative w-12 h-12 ${items.length === 1 && "left-1/2 -translate-x-1/2 z-[999]"}`}
 			onMouseDown={() => router.push(props.href)}
       
 			/>
 			{
 				items.length > 1 && (
-					<div className="w-24 h-12 inline-flex gap-2 items-center justify-center relative bottom-12 left-1/2 -translate-x-1/2 z-[999]">
+					<div className="w-24 h-12 inline-flex gap-2 items-center justify-center absolute bottom-12 left-1/2 -translate-x-1/2 z-[999]">
 						<SlideIcon isActive={current === 1} />
 						<SlideIcon isActive={current === 2} />
 						<SlideIcon isActive={current === 3} />
