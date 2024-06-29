@@ -152,13 +152,13 @@ export default function MenuDrawer(
 				{
 					(props.section === "friends" && props.friends) && (
 						
-						<div className='w-full h-full flex flex-col mt-4 mb-4 overflow-auto max-h-[400px]'>
+						<div className='w-full  flex flex-col mt-4 mb-4 overflow-auto h-[60%] '>
 							
 						<div className='w-full inline-flex items-center justify-center absolute top-[6%] left-1/2 -translate-x-1/2 -mt-9'>
 						<Image src={'/icons/email.png'} alt="Logo" width={128} height={128} className="w-16 h-16 object-contain" draggable={false} priority/>
 						</div>
 
-							<div className='w-[98%] flex flex-col gap-2 mt-6'>
+							<div className='w-[98%] flex flex-col gap-2 mt-1'>
 								<ReferralRewardCard avatarURL={'/icons/referral.png'} title={'Invite your friend!'} amount={5000} />
 								<ReferralRewardCard avatarURL={'/icons/referral-premium.png'} title={'Invite your premium friend!'} amount={10000} />
 							</div>
@@ -186,7 +186,7 @@ export default function MenuDrawer(
 										</svg>
 									</Button>
 								</div>
-								<div className='w-full h-24 bg-backdrop rounded-2xl inline-flex items-center justify-center mt-0.5'>
+								<div className='w-full h-20 bg-backdrop rounded-2xl inline-flex items-center justify-center mt-0.5'>
 									{
 										(props.friends.length > 0) ? (
 											<Table>
