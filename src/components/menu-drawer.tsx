@@ -297,6 +297,7 @@ export default function MenuDrawer(
 								progress={1}
 								goal={3}
 								action='Referrals'
+								description='Invite 3 your friends! To complete this quest, your friends must be your referrals.'
 								/>
 
 								<QuestCard
@@ -304,6 +305,8 @@ export default function MenuDrawer(
 								iconURL={'/icons/tg.png'}
 								title={'Join our Telegram channel!'}
 								action='Join'
+								waitcondition={true}
+								description='Join our Telegram channel!'
 								/>
 
 								<QuestCard
@@ -311,6 +314,8 @@ export default function MenuDrawer(
 								iconURL={'/icons/tg.png'}
 								title={'Join our Telegram chat!'}
 								action='Join'
+								waitcondition={true}
+								description='Subscribe us and chat with us! (English only)'
 								/>
 
 								<QuestCard
@@ -318,6 +323,8 @@ export default function MenuDrawer(
 								iconURL={'/icons/x.png'}
 								title={'Join our Twitter!'}
 								action='Follow'
+								waitcondition={true}
+								description='Follow us on Twitter!'
 								/>							
 								
 

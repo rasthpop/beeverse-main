@@ -16,6 +16,7 @@ export default function QuestDrawer(props:{
     questReward: number;
     section: string;
     buttontext: string;
+    condition?: boolean;
 
     progress?: number;
     goal?: number
@@ -68,9 +69,10 @@ export default function QuestDrawer(props:{
 					</Button>
 				</div>
 
-                 <div className="px-12 mt-3 text-[14px] flex  flex-col">
-                    <p>your tak is::::</p>
-                    <div><span>Reward:</span> <span> <HoneyDisplay text={"14"} isBold={false} iconSize={16} amount={props.questReward} /> </span> </div>
+                 <div className="px-16 mt-5 text-[16px] flex gap-2 flex-col">
+                    <p>{props.questDescription}</p>
+                    {props.condition && <p>You need to wait 24 hours for this quest to be counted, if you unsubscribe - it will be failed!</p>}
+                    <div><span>Reward:</span> <span> <HoneyDisplay text={"16px"} isBold={false} iconSize={16} amount={props.questReward} /> </span> </div>
                     {props.progress && <div>Invited: ({props.progress}/{props.goal})</div>}
                    
                     <div className="flex justify-center mt-4 mb-3">             

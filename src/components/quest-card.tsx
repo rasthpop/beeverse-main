@@ -14,7 +14,9 @@ export default function QuestCard(
 		actionURL?: string;
 		progress?: number; 
 		goal?: number;
-		action: string
+		waitcondition?: boolean;
+		action: string;
+		description: string
 	}
 ) {
 	const utils = useUtils(true);
@@ -62,11 +64,12 @@ export default function QuestCard(
 			<QuestDrawer 
 			section={props.iconURL}
 			questTittle={props.title}
-			questDescription={isUrlTelegram || isUrlX ? "Telegram or X Quest" : "Referall Quest" }
+			questDescription={props.description}
 			questReward={props.reward}
 			buttontext={props.action}
 			progress={props.progress}
 			goal={props.goal}
+			condition={props.waitcondition}
 			/>
         </div>
     )
