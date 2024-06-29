@@ -246,9 +246,9 @@ const CarouselNext = React.forwardRef<
       onClick={canScrollNext ? scrollNext : onMouseDown}
       {...props}
     >
-      <svg width="24" height="24" viewBox="0 0 15 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* <svg width="24" height="24" viewBox="0 0 15 25" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M2 2L13 12.5L2 23" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
+      </svg> */}
       <span className="sr-only">Next slide</span>
     </Button>
   )
