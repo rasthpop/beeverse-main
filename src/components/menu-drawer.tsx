@@ -292,7 +292,7 @@ export default function MenuDrawer(
 							<div className='w-full flex flex-col'>
 								<QuestCard
 								reward={75000}
-								iconURL={'/icons/referral.png'}
+								iconURL={'/icons/email.png'}
 								title={'Invite your 3 friends!'}
 								progress={1}
 								goal={3}
@@ -325,6 +325,7 @@ export default function MenuDrawer(
 								action='Follow'
 								waitcondition={true}
 								description='Follow us on Twitter!'
+								
 								/>							
 								
 
