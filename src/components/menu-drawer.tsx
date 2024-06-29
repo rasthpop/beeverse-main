@@ -121,7 +121,7 @@ export default function MenuDrawer(
 					(props.section === "leaderboard" && props.leaders) && (
 					<div className='flex justify-center pb-8'>
 						{/* min-h-[212px] max-h-[504px]  */}
-						<div className='w-[96%] rounded-3xl max-h-[504px] bg-backdrop mt-8  overflow-auto '>
+						<div className='w-[96%] rounded-3xl max-h-[414px] bg-backdrop mt-8  overflow-auto '>
 							<Table className='flex justify-center  '>
 								{/* <TableHeader>
 									<TableRow>
@@ -163,7 +163,7 @@ export default function MenuDrawer(
 								<ReferralRewardCard avatarURL={'/icons/referral-premium.png'} title={'Invite your premium friend!'} amount={10000} />
 							</div>
 							<div className='w-full flex flex-col gap-2 items-center justify-center mt-2'>
-								<p className='text-[14px] pl-2 font-medium text-foreground'>In addition to the bonus for inviting a friend, you also receive <span className='text-gold'> 0.5% of the balance of all your friends,<span className='text-foreground'>as well as</span> 0.1% of the balance of those invited by your friends!</span></p>
+								<p className='text-[14px] pl-2 font-medium text-foreground'>In addition to the bonus for inviting a friend, you also receive <span className='text-gold'> 0.5% of the balance of all your friends</span></p>
 								<Button
 								variant={'default'}
 								className='px-4 py-1.5 gap-0.5'

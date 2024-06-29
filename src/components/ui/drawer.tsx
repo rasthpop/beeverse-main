@@ -46,7 +46,7 @@ const DrawerContent = React.forwardRef<
       ref={ref}
       className={cn(
         
-        "fixed inset-x-0 bottom-0 z-50 mt-24 flex  flex-col bg-top bg-cover bg-no-repeat  px-4 pt-1 pb-4 ring-0",
+        "fixed inset-x-0 bottom-0 z-50 mt-24 flex bg-[url(/backgrounds/drawer.webp)] flex-col bg-top bg-cover bg-no-repeat  px-4 pt-1 pb-1 ring-0",
         className
       )}
       {...props}
@@ -56,13 +56,6 @@ const DrawerContent = React.forwardRef<
       {children}
       </div>
       <div className="absolute top-0 left-0 z-0 w-full">
-      <Image 
-          src="/backgrounds/drawer.webp"
-          width={500}
-          height={500}
-          className="object-contain"
-          alt="drawerimage"
-      />
       </div>
     </DrawerPrimitive.Content>
   </DrawerPortal>
