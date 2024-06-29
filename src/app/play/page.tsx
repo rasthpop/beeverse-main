@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Image from "next/image";
 import { Progress } from "@/components/ui/progress";
 import { useData } from "@/controllers/context";
@@ -11,14 +11,26 @@ import InfoPopover from "@/components/info-popover";
 import MenuButton from "@/components/menu-drawer";
 import RankDrawer from "@/components/rank-drawer";
 import { TAP_PROFIT } from "@/constants";
-import { Bee } from "@/components/ui/bee";
+import BeeIdle from "@/components/bee/bee";
+import BeeHit from "@/components/bee/bee-hit";
+import BearIdle from "@/components/bear/bear-idle";
+import BearDamage from "@/components/bear/bear-hit";
+
 
 
 
 
 export default function Page() {
-	const [hurt, setIsHurt] = useState(false)
+
 	const router = useRouter();
+	const maxHealt = 10000;
+
+
+	const [atackInProgress, setAtackInProgress] = useState(false);
+	const [gameEnd, setGameEnd] = useState(false);
+	const clickTimeoutRef = useRef(null);
+
+	const [health, setHealth] = useState(maxHealt);
 	// Context
 	const {
 		isPhone,
@@ -44,16 +56,38 @@ export default function Page() {
 		} else {
 			const isTapDone = handlePlayerTap(TAP_PROFIT);
 		}
-		setIsHurt(true);
-		setTimeout(() => {
-		  setIsHurt(false);
-		}, 135);
 
 	}
+	
+// work in Progress..
+	function handleAtack() {
+		if (gameEnd) return;
 
+		setHealth((prev) => prev - 100);
+		if (!atackInProgress) {
+			setAtackInProgress(true);
+		}
+
+		if (clickTimeoutRef.current) {
+			clearTimeout(clickTimeoutRef.current);
+		}
+
+		clickTimeoutRef.current = setTimeout(() => {
+			setAtackInProgress(false);
+			clickTimeoutRef.current = null
+		}, 300);
+	}
 	if (isContext) return router.replace('/');
 	return (
-		<main className="grow w-full h-screen overflow-auto bg-green-900 bg-center bg-no-repeat bg-cover flex flex-col relative  z-0">
+		<main className="grow w-full h-screen overflow-auto bg-center bg-no-repeat bg-cover flex flex-col relative  z-0">
+			<div>
+			<video
+				src='/animations/back.webm'
+				autoPlay
+				muted
+				loop
+				className='w-full h-full absolute object-cover z-0'/>
+			</div>
 			<div className="absolute top-1/2 z-[99]">VERSION: 2.0 </div>
 			<section id="main-section" className="w-full h-full flex flex-col items-center justify-between z-20 mt-6">
 				<div id="main-top-box" className="w-full flex flex-col justify-between gap-1">
@@ -81,27 +115,19 @@ export default function Page() {
 						<TargetStatsCard title={"HP Heal"} data={"Coming soon"} isLocked={true} />
 						<TargetStatsCard title={"Loot"} data={"25000"} isLocked={false} />
 					</div>
-					<Progress value={100} content="Immortal" className="fixed text-[16px] top-[155px] bg-[url(/interface/target-progress.png)] "/>
+					<Progress value={100} content="Immortal" className="fixed text-[16px] z-20 top-[155px] bg-[url(/interface/target-progress.png)] "/>
 				</div>
 				<div className="w-full h-full inline-flex items-center justify-center px-4 py-2">
 								{/* Bear */}
 					<div
-					onTouchStart={isPhone ? coinInteraction : undefined}
-					onClick={!isPhone ? coinInteraction : undefined}
+					onTouchStart={isPhone ? handleAtack : undefined}
+					onClick={!isPhone ? handleAtack : undefined}
 					>
-						{/* <Image
-						src="/game-target.png"
-						alt="Logo"
-						width={1024}
-						height={1024}
-						className="h-full max-h-[372px] object-contain"
-						draggable={false}
-						priority
-						/> */}
+						<BearIdle visible={!atackInProgress && !gameEnd} />
+						<BearDamage visible={atackInProgress && !gameEnd} />
 					</div>
-					{/* <Bee 
-					attack={hurt}
-					/> */}
+					<BeeIdle visible={!atackInProgress || gameEnd} />
+					<BeeHit visible={atackInProgress && !gameEnd} />
 				</div>
 				<div id="main-bottom-box" className="fixed bottom-0 w-full inline-flex items-center justify-center mb-4">
 					<div className="w-full relative">
