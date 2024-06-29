@@ -54,7 +54,7 @@ export default function Page() {
 	if (isContext) return router.replace('/');
 	return (
 		<main className="grow w-full h-screen overflow-auto bg-green-900 bg-center bg-no-repeat bg-cover flex flex-col relative  z-0">
-			<div className="absolute top-1/2 z-[99]">VERSION: 1.8 </div>
+			<div className="absolute top-1/2 z-[99]">VERSION: 2.0 </div>
 			<section id="main-section" className="w-full h-full flex flex-col items-center justify-between z-20 mt-6">
 				<div id="main-top-box" className="w-full flex flex-col justify-between gap-1">
 					<div className="w-full fixed h-14 inline-flex items-center justify-between gap-1.5 px-4 ">
@@ -81,7 +81,7 @@ export default function Page() {
 						<TargetStatsCard title={"HP Heal"} data={"Coming soon"} isLocked={true} />
 						<TargetStatsCard title={"Loot"} data={"25000"} isLocked={false} />
 					</div>
-					<Progress value={100} content="Immortal" className="fixed top-[155px] bg-[url(/interface/target-progress.png)] "/>
+					<Progress value={100} content="Immortal" className="fixed text-[16px] top-[155px] bg-[url(/interface/target-progress.png)] "/>
 				</div>
 				<div className="w-full h-full inline-flex items-center justify-center px-4 py-2">
 								{/* Bear */}
