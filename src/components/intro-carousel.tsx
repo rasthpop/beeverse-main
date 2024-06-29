@@ -76,7 +76,7 @@ export function IntroCarouselDApi(
 			/>
 			{
 				items.length > 1 && (
-					<div className="w-24 h-12 inline-flex gap-2 items-center justify-center absolute bottom-12 left-1/2 -translate-x-1/2 z-[999]">
+					<div className="w-24 h-12 inline-flex gap-2 items-center justify-center relative bottom-12 left-1/2 -translate-x-1/2 z-[999]">
 						<SlideIcon isActive={current === 1} />
 						<SlideIcon isActive={current === 2} />
 						<SlideIcon isActive={current === 3} />
