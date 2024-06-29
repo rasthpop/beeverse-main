@@ -31,7 +31,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <meta name="viewport" /> 
+      <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+      </head>
       <body className={cn(
         "h-screen bg-black font-sans flex flex-col antialiased relative overflow-hidden",
         gFont.variable

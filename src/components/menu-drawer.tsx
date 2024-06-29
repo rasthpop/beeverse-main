@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { Button } from "./ui/button";
 import { cn } from '@/lib/utils';
@@ -28,7 +28,8 @@ export default function MenuDrawer(
 		quests?: Tables<'quests'>[]
 	}
 ) {
-	//Front
+	const [claim, setIsClaimed] = useState(false)
+
 	
 
 	// Telegram SDK
@@ -257,15 +258,15 @@ export default function MenuDrawer(
 						<div className='w-full min-h-full max-h-full items-center flex flex-col mt-4 ml-2 overflow-auto'>
 							
 
-						<div className='w-[95%] inline-flex items-center justify-center absolute top-[7%] left-1/2 -translate-x-1/2 -mt-9'>
+						<div className='w-[95%] inline-flex items-center justify-center absolute top-[8%] left-1/2 -translate-x-1/2 -mt-9 '>
 						<Image src={'/icons/chest.png'} alt="Logo" width={128} height={128} className="w-16 h-16 object-contain" draggable={false} priority/>
 						</div>
-						<div className='flex text-[16px]'>
-							<div className='bg-backdrop w-[145px] h-[145px] flex items-center flex-shrink-0 mr-[13px] rounded-[20px]'>
+						<div className='flex pr-3'>
+							<div className='bg-backdrop w-[128px] h-[128px] flex items-center flex-shrink-0 mr-[13px] rounded-[20px]'>
 								<img src='/icons/tresurechest.png' />
 							</div>
 							<div>
-								<span>Every 4 hours, your worker bees will bring you more honey! Specifically, 0.5% of your balance.</span>
+								<span className=' text-[16px]'>Every 4 hours, your worker bees will bring you more honey! Specifically, 0.5% of your balance.</span>
 								<p className=''>Your passive income now:  </p>
 																			{/* 0.5% of balance  */}
 								<div className='flex text-[18px] items-center'>	<p> 1,500</p> <img src='/icons/honey.png'  className='ml-[2px] w-4 h-4' />	</div>
@@ -274,9 +275,10 @@ export default function MenuDrawer(
 
 						<Button
 						// claim treasure
+						onClick={() =>{setIsClaimed(true)}}
 						className=' h-12 w-[50%] mt-6 mb-2 text-[20px] rounded-[64px] border-2'
 						>
-							Get 1,500 <img src='/icons/honey.png' className='ml-[2px] w-6 h-6' />
+							{claim? <p className='opacity-60'> Come back in CD </p> : <div className='flex items-center'>Get 1,500 <img src='/icons/honey.png' className='ml-[2px] w-6 h-6' /></div>}
 						</Button>	
 					</div>
 				)
