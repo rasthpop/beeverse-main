@@ -152,7 +152,7 @@ export default function MenuDrawer(
 				{
 					(props.section === "friends" && props.friends) && (
 						
-						<div className='w-full h-full flex flex-col mt-4 mb-4 overflow-auto'>
+						<div className='w-full h-full flex flex-col mt-4 mb-4 overflow-auto max-h-[400px]'>
 							
 						<div className='w-full inline-flex items-center justify-center absolute top-[6%] left-1/2 -translate-x-1/2 -mt-9'>
 						<Image src={'/icons/email.png'} alt="Logo" width={128} height={128} className="w-16 h-16 object-contain" draggable={false} priority/>
@@ -170,7 +170,7 @@ export default function MenuDrawer(
 								// onClick={() => refreshReferrals(player)}
 								>
 									Get Income:
-									<HoneyDisplay isBold={false} amount={50000} iconSize={16} textClass='text-base' />
+									<HoneyDisplay isBold={false} amount={0} iconSize={16} textClass='text-base' />
 								</Button>
 							</div>
 							<div className='w-[98%] flex flex-col items-center justify-center mt-4'>
