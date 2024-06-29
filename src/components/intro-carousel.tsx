@@ -70,7 +70,7 @@ export function IntroCarouselDApi(
 		<div className="z-[999] w-full">
 			<CarouselNext
 			variant={'default'}
-			className={`relative w-12 h-12 ${items.length === 1 && "left-1/2 -translate-x-1/2 z-[999]"}`}
+			className={` w-12 h-12 ${items.length === 1 && "left-1/2 -translate-x-1/2 z-[999]"}`}
 			onMouseDown={() => router.push(props.href)}
       
 			/>
