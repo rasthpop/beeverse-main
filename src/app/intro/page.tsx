@@ -1,3 +1,4 @@
+'use client'
 import { IntroCarouselDApi } from "@/components/intro-carousel";
 
 const items: IntroItem[] = [

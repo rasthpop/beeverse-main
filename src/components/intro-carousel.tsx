@@ -67,7 +67,7 @@ export function IntroCarouselDApi(
             </CarouselItem>
           ))}
         </CarouselContent>
-		<div className="relative w-full">
+		<div className="z-[999] w-full">
 			<CarouselNext
 			variant={'default'}
 			className={`w-12 h-12 ${items.length === 1 && "left-1/2 -translate-x-1/2 z-[999]"}`}
