@@ -72,6 +72,7 @@ export function IntroCarouselDApi(
 			variant={'default'}
 			className={`w-12 h-12 ${items.length === 1 && "left-1/2 -translate-x-1/2 z-[999]"}`}
 			onMouseDown={() => router.push(props.href)}
+      
 			/>
 			{
 				items.length > 1 && (
@@ -95,7 +96,7 @@ function SlideIcon(
   }
 ) {
   return(
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={20} height={20} className={`${props.isActive ? " fill-[#FF6914]" : "text-transparent fill-[#FFFFFF] opacity-30"} transition-all`}>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width={20} height={20} className={`${props.isActive ? " fill-[#FF6914]" : "text-transparent fill-[#FFFFFF] opacity-30"} z-[999] transition-all`}>
       <circle cx="12" cy="12" r="8" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
     </svg>
   )

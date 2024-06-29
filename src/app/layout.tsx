@@ -31,6 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <meta name="viewport" /> 
       <body className={cn(
         "h-screen bg-black font-sans flex flex-col antialiased relative overflow-hidden",
         gFont.variable
