@@ -164,7 +164,7 @@ export default function MenuDrawer(
 								<ReferralRewardCard avatarURL={'/icons/referral-premium.png'} title={'Invite your premium friend!'} amount={10000} />
 							</div>
 							<div className='w-full flex flex-col gap-2 items-center justify-center mt-2'>
-								<p className='text-[14px] pl-2 font-medium text-foreground'>In addition to the bonus for inviting a friend, you also receive <span className='text-gold'> 0.5% of the balance of all your friends</span></p>
+								<p className='text-[14px] pl-2 font-medium text-foreground'>In addition to the bonus for inviting a friend, you also receive <span className='text-gold'> 0.5% of the balance of all your friends!</span></p>
 								<Button
 								variant={'default'}
 								className='px-4 py-1.5 gap-0.5'
