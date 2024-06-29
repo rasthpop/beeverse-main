@@ -42,7 +42,7 @@ export default function QuestDrawer(props:{
 							<div className={`w-full inline-flex items-center justify-center absolute ${props.questTittle === "Invite your 3 friends!"? "top-[48%]" : "top-[53%]"}  left-1/2 -translate-x-1/2 -mt-9`}>
 								<Image
 								src={
-                                    props.questTittle === "Invite your 3 friends!"? '/icons/email.png ' : props.section
+                                    props.questTittle === "Invite your 3 friends!"? "/icons/email.png " : props.section
                                 }
 								alt="Logo"
 								width={64}

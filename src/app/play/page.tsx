@@ -12,7 +12,7 @@ import MenuButton from "@/components/menu-drawer";
 import RankDrawer from "@/components/rank-drawer";
 import { TAP_PROFIT } from "@/constants";
 import { Bee } from "@/components/ui/bee";
-import BossLoot from "@/components/ui/boos-loot";
+
 
 
 
