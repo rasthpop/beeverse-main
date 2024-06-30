@@ -22,12 +22,12 @@ export default function Rankprogress(props:{
 					style={{ width: healthBarWidth + '%' }}
 					className={`max-w-[89%] min-w-[11%] h-[26px] overflow-hidden`}>
 					<img
-						className='w-[220px] relative max-w-none top-[-1px]'
+						className='w-[220px] relative max-w-none top-[-1.5px]'
 						src={'/progressbar/hp-bar-full.png'}
 						alt='Hp bar Full'
 					/>
 				</div>
-				<h2 className='absolute top-[2px] text-[#ECEBEA] text-sm font-medium text-center w-full'>
+				<h2 className='absolute top-[6px] text-[#ECEBEA] text-[10px] font-medium text-center w-full'>
 					{props.balance}/{props.reqAmount} HP
 				</h2>
 			</div>        
