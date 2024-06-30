@@ -16,13 +16,13 @@ export default function Rankprogress(props:{
 	}, [props.balance, props.reqAmount]);
 
     return(
-		<div className='relative w-[220px] h-[26px] my-2'>
+		<div className='relative w-[240px] h-[26px] my-2'>
 				<Image src={'/progressbar/hp-bar-empty.png'} fill objectFit='cover' alt='Hp bar Empty' />
 				<div
 					style={{ width: healthBarWidth + '%' }}
-					className={`max-w-[89%] min-w-[11%] h-[26px] overflow-hidden`}>
+					className={`max-w-[89%] min-w-[11%] h-[26px]overflow-hidden`}>
 					<img
-						className='w-[220px] relative max-w-none top-[-1.5px]'
+						className='w-[240px] relative max-w-none top-[-3px]'
 						src={'/progressbar/hp-bar-full.png'}
 						alt='Hp bar Full'
 					/>
