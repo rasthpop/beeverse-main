@@ -70,7 +70,7 @@ export default function MenuDrawer(
 					alt="Logo"
 					width={128}
 					height={128}
-					className={`${props.iconURL === "/icons/chest.png" || props.iconURL === "/icons/email.png" ? "w-10 h-10" : props.iconURL === "/icons/notification.png"? "h-7 w-7" : "w-9 h-9"} object-contain`}
+					className={`${props.iconURL === "/icons/chest.png" || props.iconURL === "/icons/email.png" ? "w-10 h-10" : props.iconURL === "/icons/notification.png"? "h-[28px] w-[28px] mb-1" : "w-9 h-9"} object-contain`}
 					draggable={false}
 					priority
 					/>
