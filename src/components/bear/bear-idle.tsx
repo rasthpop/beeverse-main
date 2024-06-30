@@ -9,7 +9,7 @@ const BearIdle = (props:{ visible: boolean; }) => {
 			className={`absolute left-0 z-10 top-[56%] translate-y-[-50%] w-full flex justify-center ${
 				props.visible ? 'visible' : 'invisible'
 			}`}>
-			<Image src={'/animations/bear_idle.png'} alt='Bear idle' width={304} height={406} />
+			<Image src={'/animations/bear_idle.png'} alt='Bear idle' width={304} height={406} priority />
 		</div>
 	);
 };

@@ -47,7 +47,7 @@ export default function MenuDrawer(
 				<Button
 				size={props.size}
 				className={cn(
-					`w-[76px] bg-transparent active:bg-transparent border-none flex flex-col gap-0 items-center justify-center text-sm font-medium text-normal-stroke leading-none relative`,
+					`w-[76px]  bg-transparent active:bg-transparent border-none flex flex-col gap-0 items-center justify-center text-sm font-medium text-normal-stroke leading-none relative`,
 					props.className
 				)}
 				onClick={() => setIsOpen(true)}
@@ -70,7 +70,7 @@ export default function MenuDrawer(
 					alt="Logo"
 					width={128}
 					height={128}
-					className="w-6 h-6 object-contain"
+					className={`${props.iconURL === "/icons/star.png" || props.iconURL === "/icons/flag.png" ? "w-9 h-9" : "w-8 h-8"} object-contain`}
 					draggable={false}
 					priority
 					/>

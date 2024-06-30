@@ -30,6 +30,7 @@ const BeeIdle = (props:{visible:boolean}) => {
 						alt='Bee idle'
 						width={100}
 						height={100}
+						priority
 					/>
 				) : (
 					<Image
@@ -38,6 +39,7 @@ const BeeIdle = (props:{visible:boolean}) => {
 						alt='Bee idle'
 						width={100}
 						height={100}
+						priority
 					/>
 				)}
 				<Image
@@ -46,6 +48,7 @@ const BeeIdle = (props:{visible:boolean}) => {
 					alt='Bee idle'
 					width={153}
 					height={137}
+					priority
 				/>
 			</div>
 		</div>
