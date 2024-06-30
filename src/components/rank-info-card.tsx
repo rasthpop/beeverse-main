@@ -10,7 +10,6 @@ export default function RankInfoCard(
 		iconURL: string;
 		requiredAmount: number;
 		bonusAmount: number;
-		progress: number;
 		currentbalance: number;
 	}
 ) {
@@ -30,7 +29,7 @@ export default function RankInfoCard(
 				{/* <HoneyDisplay amount={props.requiredAmount} iconSize={32} /> */}
 				{/* <Progress value={0} content={`${props.currentbalance}/${props.requiredAmount}`} className="bg-[url(/interface/target-progress.png)] text-[10px] "/> */}
 				<div>
-					<Rankprogress balance={props.currentbalance} reqAmount={10000000} />
+					<Rankprogress balance={props.currentbalance} reqAmount={props.requiredAmount} />
 				</div>
 				<p className='text-foreground text-base font-medium leading-5 ml-[10px]'>Reward: {props.description} + <span><HoneyDisplay isBold={false} amount={props.bonusAmount} iconSize={18} textClass='text-sm text-normal-stroke font-not-bold' /></span></p>
 			</div>

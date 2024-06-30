@@ -3,7 +3,7 @@ import Image from 'next/image';
 export default function TargetStatsCard(
     props: {
         title: string;
-        data: string;
+        data: any;
         iconMainURL?: string;
 		iconDataURL?: string;
 		isLocked: boolean;

@@ -13,6 +13,7 @@ import { useData } from "@/controllers/context";
 
 export default function RankDrawer(props:{
 	isSvg:boolean;
+
 }) {
 	// Supabase
 	const supabase = createClient();
@@ -68,11 +69,7 @@ export default function RankDrawer(props:{
 						requiredAmount={rank.required_amount}
 						bonusAmount={rank.bonus_amount}
 						currentbalance={user?.balance || 0}
-						progress={
-							rank.id === (userRank?.id || ranks[0])
-							? (user?.balance || 0)
-							: 100
-						}
+
 						/>
 					))}
 				</div>

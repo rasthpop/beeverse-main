@@ -6,7 +6,7 @@ export default function HoneyDisplay(
 		textClass?: string;
 		amount: number;
 		iconSize: number;
-		isBold: boolean;
+		isBold?: boolean;
 		text?: string
 	}
 ) {
