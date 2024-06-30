@@ -24,14 +24,14 @@ import Progressbar from "@/components/ui/progressbar";
 export default function Page() {
 
 	const router = useRouter();
-	const maxHealt = 10000;
+	const maxHealth = 10000;
 
 
 	const [atackInProgress, setAtackInProgress] = useState(false);
 	const [gameEnd, setGameEnd] = useState(false);
 	const clickTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-	const [health, setHealth] = useState(maxHealt);
+	const [health, setHealth] = useState(maxHealth);
 	// Context
 	const {
 		isPhone,
@@ -47,21 +47,22 @@ export default function Page() {
 	const isContext = !user || !userRank || !ranks;
 
 	// Handle coin interaction
-	async function coinInteraction() {
-		if (isContext) return;
 
-		if (user.balance >= (userRank.required_amount - TAP_PROFIT)) {
-			const isLevelUpdated = handleNewRank(userRank);
-			if (!isLevelUpdated) console.log("PLAYER NOT NEW RANK");
-			if (isLevelUpdated) console.log("PLAYER NEW RANK");
-		} else {
-			const isTapDone = handlePlayerTap(TAP_PROFIT);
-		}
-
-	}
 	
 // work in Progress..
-	function handleAtack() {
+async	function handleAtack() {
+
+	if (isContext) return;
+
+	if (user.balance >= (userRank.required_amount - TAP_PROFIT)) {
+		const isLevelUpdated = handleNewRank(userRank);
+		if (!isLevelUpdated) console.log("PLAYER NOT NEW RANK");
+		if (isLevelUpdated) console.log("PLAYER NEW RANK");
+	} else {
+		const isTapDone = handlePlayerTap(TAP_PROFIT);
+	}
+		
+
 		if (gameEnd) return;
 
 		setHealth((prev) => prev - 100);
@@ -89,7 +90,7 @@ export default function Page() {
 				loop
 				className='w-full h-full absolute object-cover z-0'/> */}
 			</div>
-			<div className="absolute top-1/2 z-[99]">VERSION: 2.6 </div>
+			<div className="absolute top-1/2 z-[99]">VERSION: 2.7 </div>
 			<section id="main-section" className="w-full h-full flex flex-col items-center justify-between z-20 mt-6">
 				<div id="main-top-box" className="w-full flex flex-col justify-between gap-1">
 					<div className="w-full fixed h-14 inline-flex items-center justify-between gap-1.5 px-4 ">
@@ -119,9 +120,9 @@ export default function Page() {
 						<TargetStatsCard title={"Loot"} data={"25000"} isLocked={false} />
 					</div>
 					{/* <Progress value={100} content="Immortal" className="fixed text-[16px] z-20 top-[155px] bg-[url(/interface/target-progress.png)] "/> */}
-					{/* <div className="fixed w-full z-20 top-[155px] text-md">
-					<Progressbar width="350px" health={40} maxHealth={100}/>
-					</div> */}
+					<div className="fixed w-full z-20 top-[155px] text-md">
+					<Progressbar health={health} maxHealth={maxHealth}/>
+					</div>
 				</div>
 
 				<div
