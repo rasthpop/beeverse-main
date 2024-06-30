@@ -70,11 +70,11 @@ export default function MenuDrawer(
 					alt="Logo"
 					width={128}
 					height={128}
-					className={`${props.iconURL === "/icons/star.png" || props.iconURL === "/icons/flag.png" ? "w-9 h-9" : "w-8 h-8"} object-contain`}
+					className={`${props.iconURL === "/icons/chest.png" || props.iconURL === "/icons/email.png" ? "w-10 h-10" : props.iconURL === "/icons/notification.png"? "h-7 w-7" : "w-9 h-9"} object-contain`}
 					draggable={false}
 					priority
 					/>
-					{props.title}
+					<span className='-mt-2'>{props.title}</span>
 					{
 						props.isLocked && (
 							<span className='text-[0.5rem] leading-none font-normal font-montserrat'>Coming soon</span>
