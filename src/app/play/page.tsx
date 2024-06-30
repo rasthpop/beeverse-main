@@ -90,7 +90,7 @@ async	function handleAtack() {
 				loop
 				className='w-full h-full absolute object-cover z-0'/> */}
 			</div>
-			<div className="absolute top-1/2 z-[99]">VERSION: 2.93 </div>
+			<div className="absolute top-1/2 z-[99]">VERSION: 2.94 </div>
 			<section id="main-section" className="w-full h-full flex flex-col items-center justify-between z-20 mt-6">
 				<div id="main-top-box" className="w-full flex flex-col justify-between gap-1">
 					<div className="w-full fixed h-14 inline-flex items-center justify-between gap-1.5 px-4 ">
@@ -139,9 +139,9 @@ async	function handleAtack() {
 					<BeeIdle visible={!atackInProgress || gameEnd} />
 					<BeeHit visible={atackInProgress && !gameEnd} />
 				</div>
-				<div id="main-bottom-box" className="fixed bottom-0 w-full inline-flex items-center justify-center mb-4">
+				<div id="main-bottom-box" className="z-[999] fixed bottom-0 w-full inline-flex items-center justify-center mb-4">
 					<div className="w-full relative">
-						<div className="w-full h-20 bg-[url(/interface/menu.png)] bg-center bg-no-repeat bg-cover rounded-xl inline-flex items-end justify-center px-4 pb-3 relative">
+						<div className="w-full z-[999] h-20 bg-[url(/interface/menu.png)] bg-center bg-no-repeat bg-cover rounded-xl inline-flex items-end justify-center px-4 pb-3 relative">
 							<MenuButton
 							title={"Leaders"}
 							iconURL={"/icons/star.png"}

@@ -28,7 +28,7 @@ export default function Rankprogress(props:{
 					/>
 				</div>
 				<h2 className='absolute top-[6px] text-[#ECEBEA] text-[10px] font-medium text-center w-full min-[399px]:top-[5px]'>
-					{props.balance}/{props.reqAmount} HP
+					{props.balance}/{props.reqAmount} 
 				</h2>
 			</div>        
     )
