@@ -6,7 +6,7 @@ import React, {useState, useEffect} from "react"
 export default function Progressbar(props:{
     health: number;
     maxHealth: number;
-
+    width: string;
 }
 ){
     const [healthBarWidth, setHealthBarWidth] = useState(89);
@@ -17,20 +17,20 @@ export default function Progressbar(props:{
 	}, [props.health, props.maxHealth]);
 
     return(
-        <div className='relative w-[250px] h-[26px] mx-auto my-2'>
+        <div className={`relative w-[${props.width}] h-[16px] mx-auto my-2`}>
         <Image src={'/progressbar/hp-bar-empty.png'} fill objectFit='cover' alt='Hp bar Empty' />
         <div
             style={{ width: healthBarWidth + '%' }}
-            className={`max-w-[89%] min-w-[11%] h-[26px] overflow-hidden`}>
+            className={`max-w-[89%] min-w-[11%] h-[16px] overflow-hidden`}>
             <img
-                className='w-[250px] relative max-w-none top-[-4px]'
+                className={`w-[${props.width}] relative max-w-none top-[-9px]`}
                 src={'/progressbar/hp-bar-full.png'}
                 alt='Hp bar Full'
             />
         </div>
-        <h2 className='absolute top-[2px] text-[#ECEBEA] text-sm font-medium text-center w-full'>
+        {/* <h2 className='absolute top-[2px] text-[#ECEBEA] text-sm font-medium text-center w-full'>
             {props.health}/{props.maxHealth}
-        </h2>
+        </h2> */}
     </div>        
     )
 }
