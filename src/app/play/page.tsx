@@ -80,30 +80,32 @@ export default function Page() {
 	}
 	if (isContext) return router.replace('/');
 	return (
-		<main className="grow w-full h-screen overflow-auto bg-center bg-no-repeat bg-cover flex flex-col relative  z-0">
+		<main className="grow w-full h-screen overflow-auto bg-[url(/back.png)] bg-center bg-no-repeat bg-cover flex flex-col relative  z-0">
 			<div>
-			<video
+			{/* <video
 				src='/animations/back.webm'
 				autoPlay
 				muted
 				loop
-				className='w-full h-full absolute object-cover z-0'/>
+				className='w-full h-full absolute object-cover z-0'/> */}
 			</div>
-			<div className="absolute top-1/2 z-[99]">VERSION: 2.4 </div>
+			<div className="absolute top-1/2 z-[99]">VERSION: 2.6 </div>
 			<section id="main-section" className="w-full h-full flex flex-col items-center justify-between z-20 mt-6">
 				<div id="main-top-box" className="w-full flex flex-col justify-between gap-1">
 					<div className="w-full fixed h-14 inline-flex items-center justify-between gap-1.5 px-4 ">
 						<div className="min-w-14 min-h-14 inline-flex items-center justify-center">
 							<RankDrawer isSvg={false} />
 						</div>
-						<div className="w-full inline-flex gap-0.5 items-center justify-between  ">
-							<HoneyDisplay isBold={true} amount={user.balance} iconSize={24} />
+						<div className="w-full inline-flex gap-0.5 items-center justify-center  ">
+							<div className=" flex justify-center">
+							<span className="ml-auto">	<HoneyDisplay  isBold={true} amount={user.balance} iconSize={24} /> </span>
 							<span className="text-xl font-bold text-foreground ">/</span>
-							<HoneyDisplay isBold={true} amount={userRank.required_amount} iconSize={24} />
+							<span className="ml-2">	<HoneyDisplay isBold={true} amount={userRank.required_amount} iconSize={24} /> </span>
+							</div>
+						</div>
 							<div className="ml-2">
 								<RankDrawer isSvg={true} />
 							</div>
-						</div>
 					</div>
 					<div className=" fixed top-[75px] w-full h-20 bg-[url(/interface/target-box.png)] bg-center bg-no-repeat bg-contain rounded-xl inline-flex items-center justify-center px-12 ">
 						<TargetStatsCard
@@ -117,16 +119,19 @@ export default function Page() {
 						<TargetStatsCard title={"Loot"} data={"25000"} isLocked={false} />
 					</div>
 					{/* <Progress value={100} content="Immortal" className="fixed text-[16px] z-20 top-[155px] bg-[url(/interface/target-progress.png)] "/> */}
-					<div className="fixed w-full z-20 top-[155px] text-md">
+					{/* <div className="fixed w-full z-20 top-[155px] text-md">
 					<Progressbar width="350px" health={40} maxHealth={100}/>
-					</div>
+					</div> */}
 				</div>
+
+				<div
+						onTouchStart={isPhone ? handleAtack : undefined}
+						onClick={!isPhone ? handleAtack : undefined}						
+						className="bg-red-400 opacity-0 w-full fixed top-[190px] h-[360px] z-[799]"></div>
 				<div className="w-full h-full inline-flex items-center justify-center px-4 py-2">
 								{/* Bear */}
-					<div
-					onTouchStart={isPhone ? handleAtack : undefined}
-					onClick={!isPhone ? handleAtack : undefined}
-					>
+					<div>
+
 						<BearIdle visible={!atackInProgress && !gameEnd} />
 						<BearDamage visible={atackInProgress && !gameEnd} />
 					</div>
