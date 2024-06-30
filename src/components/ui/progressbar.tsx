@@ -28,9 +28,9 @@ export default function Progressbar(props:{
                 alt='Hp bar Full'
             />
         </div>
-        {/* <h2 className='absolute top-[2px] text-[#ECEBEA] text-sm font-medium text-center w-full'>
+        <h2 className='absolute top-[2px] text-[#ECEBEA] text-sm font-medium text-center w-full'>
             {props.health}/{props.maxHealth}
-        </h2> */}
+        </h2>
     </div>        
     )
 }
