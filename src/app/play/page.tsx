@@ -89,7 +89,7 @@ export default function Page() {
 				loop
 				className='w-full h-full absolute object-cover z-0'/>
 			</div>
-			<div className="absolute top-1/2 z-[99]">VERSION: 2.3 </div>
+			<div className="absolute top-1/2 z-[99]">VERSION: 2.4 </div>
 			<section id="main-section" className="w-full h-full flex flex-col items-center justify-between z-20 mt-6">
 				<div id="main-top-box" className="w-full flex flex-col justify-between gap-1">
 					<div className="w-full fixed h-14 inline-flex items-center justify-between gap-1.5 px-4 ">

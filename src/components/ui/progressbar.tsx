@@ -17,13 +17,13 @@ export default function Progressbar(props:{
 	}, [props.health, props.maxHealth]);
 
     return(
-        <div className={`relative w-[${props.width}] h-[16px] mx-auto my-2`}>
+        <div className={`relative w-[${props.width}] h-[26px] mx-auto my-2`}>
         <Image src={'/progressbar/hp-bar-empty.png'} fill objectFit='cover' alt='Hp bar Empty' />
         <div
             style={{ width: healthBarWidth + '%' }}
             className={`max-w-[89%] min-w-[11%] h-[16px] overflow-hidden`}>
             <img
-                className={`w-[${props.width}] relative max-w-none top-[-9px]`}
+                className={`w-[${props.width}] relative max-w-none top-[-10px]`}
                 src={'/progressbar/hp-bar-full.png'}
                 alt='Hp bar Full'
             />
